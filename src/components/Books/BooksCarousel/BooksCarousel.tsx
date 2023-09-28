@@ -1,16 +1,35 @@
 import { BookCard } from "../BookCard/BookCard"
-import data from '../../../assets/database/data.json'
+import { FC } from "react";
 
+import { Pagination, A11y } from 'swiper/modules';
+import { Swiper, SwiperSlide } from 'swiper/react'
 
-export const BooksCarousel = ()=>{
-    console.log(data[0])
-    const booksCards = data.map(book=>{
-        return <BookCard key={book.isbn} book={book}/>
+import { BookInterface } from "../../../Interfaces/BookInterface";
+
+import 'swiper/css'
+import 'swiper/css/pagination';
+
+type BooksCarouselProps = {
+    booksArray: BookInterface[]
+}
+
+export const BooksCarousel:FC<BooksCarouselProps> = ({booksArray})=>{
+    const booksCards = booksArray.map(book=>{
+        return (
+            <SwiperSlide key={book.isbn} className="flex justify-center p-10">
+                <BookCard book={book}/>
+            </SwiperSlide>
+        )
     })
 
     return (
-        <div className="grid grid-cols-3">
+        <Swiper
+            modules={[Pagination, A11y]}
+            spaceBetween={50}
+            slidesPerView={'auto'}
+            pagination={{ dynamicBullets: true }}
+        >
             {booksCards}
-        </div>
+        </Swiper>
     )
 }

@@ -1,5 +1,20 @@
 [
     {
+        "isbn": 2593082605,
+        "title": "Recursion",
+        "author": "Blake Crouch",
+        "price": "$13.69",
+        "comparePrice": "$18.00",
+        "stock": 17,
+        "images": ["https://res.cloudinary.com/dsinhkkv3/image/upload/v1695897683/recursion_snmhwj.jpg"],
+        "description": "[Kurt Vonnegut's] best book . . . He dares not only ask the ultimate question about the meaning of life, but to answer it.—Esquire\\nNominated as one of America's best-loved novels by PBS's The Great American Read\\nThe Sirens of Titan is an outrageous romp through space, time, and morality. The richest, most depraved man on Earth, Malachi Constant, is offered a chance to take a space journey to distant worlds with a beautiful woman at his side. Of course there's a catch to the invitation and a prophetic vision about the purpose of human life that only Vonnegut has the courage to tell.",
+        "rating": 5,
+        "reviews": [],
+        "pages": 336,
+        "collections": ["Popular"]
+    },
+
+    {
         "isbn": 2385333498,
         "title": "The Sirens of Titan",
         "author": "Kurt Vonnegut Jr.",
@@ -10,7 +25,8 @@
         "description": "[Kurt Vonnegut's] best book . . . He dares not only ask the ultimate question about the meaning of life, but to answer it.—Esquire\\nNominated as one of America's best-loved novels by PBS's The Great American Read\\nThe Sirens of Titan is an outrageous romp through space, time, and morality. The richest, most depraved man on Earth, Malachi Constant, is offered a chance to take a space journey to distant worlds with a beautiful woman at his side. Of course there's a catch to the invitation and a prophetic vision about the purpose of human life that only Vonnegut has the courage to tell.",
         "rating": 5,
         "reviews": [],
-        "pages": 336
+        "pages": 336,
+        "collections": ["Classic"]
     },
     
     {
@@ -24,7 +40,8 @@
         "description": "[Kurt Vonnegut's] best book . . . He dares not only ask the ultimate question about the meaning of life, but to answer it.—Esquire\\nNominated as one of America's best-loved novels by PBS's The Great American Read\\nThe Sirens of Titan is an outrageous romp through space, time, and morality. The richest, most depraved man on Earth, Malachi Constant, is offered a chance to take a space journey to distant worlds with a beautiful woman at his side. Of course there's a catch to the invitation and a prophetic vision about the purpose of human life that only Vonnegut has the courage to tell.",
         "rating": 5,
         "reviews": [],
-        "pages": 336
+        "pages": 336,
+        "collections": ["Popular", "Classic"]
     },
     
     {
@@ -38,7 +55,8 @@
         "description": "[Kurt Vonnegut's] best book . . . He dares not only ask the ultimate question about the meaning of life, but to answer it.—Esquire\\nNominated as one of America's best-loved novels by PBS's The Great American Read\\nThe Sirens of Titan is an outrageous romp through space, time, and morality. The richest, most depraved man on Earth, Malachi Constant, is offered a chance to take a space journey to distant worlds with a beautiful woman at his side. Of course there's a catch to the invitation and a prophetic vision about the purpose of human life that only Vonnegut has the courage to tell.",
         "rating": 5,
         "reviews": [],
-        "pages": 336
+        "pages": 336,
+        "collections": ["Popular", "Classic"]
     },
     
     {
@@ -52,7 +70,8 @@
         "description": "[Kurt Vonnegut's] best book . . . He dares not only ask the ultimate question about the meaning of life, but to answer it.—Esquire\\nNominated as one of America's best-loved novels by PBS's The Great American Read\\nThe Sirens of Titan is an outrageous romp through space, time, and morality. The richest, most depraved man on Earth, Malachi Constant, is offered a chance to take a space journey to distant worlds with a beautiful woman at his side. Of course there's a catch to the invitation and a prophetic vision about the purpose of human life that only Vonnegut has the courage to tell.",
         "rating": 5,
         "reviews": [],
-        "pages": 336
+        "pages": 336,
+        "collections": ["Popular", "Classic"]
     },
     
     {
@@ -66,21 +85,8 @@
         "description": "[Kurt Vonnegut's] best book . . . He dares not only ask the ultimate question about the meaning of life, but to answer it.—Esquire\\nNominated as one of America's best-loved novels by PBS's The Great American Read\\nThe Sirens of Titan is an outrageous romp through space, time, and morality. The richest, most depraved man on Earth, Malachi Constant, is offered a chance to take a space journey to distant worlds with a beautiful woman at his side. Of course there's a catch to the invitation and a prophetic vision about the purpose of human life that only Vonnegut has the courage to tell.",
         "rating": 5,
         "reviews": [],
-        "pages": 336
-    },
-    
-    {
-        "isbn": 2593082605,
-        "title": "Recursion",
-        "author": "Blake Crouch",
-        "price": "$13.69",
-        "comparePrice": "$18.00",
-        "stock": 17,
-        "images": ["https://res.cloudinary.com/dsinhkkv3/image/upload/v1695897683/recursion_snmhwj.jpg"],
-        "description": "[Kurt Vonnegut's] best book . . . He dares not only ask the ultimate question about the meaning of life, but to answer it.—Esquire\\nNominated as one of America's best-loved novels by PBS's The Great American Read\\nThe Sirens of Titan is an outrageous romp through space, time, and morality. The richest, most depraved man on Earth, Malachi Constant, is offered a chance to take a space journey to distant worlds with a beautiful woman at his side. Of course there's a catch to the invitation and a prophetic vision about the purpose of human life that only Vonnegut has the courage to tell.",
-        "rating": 5,
-        "reviews": [],
-        "pages": 336
+        "pages": 336,
+        "collections": ["Classic"]
     },
     
     {
@@ -94,7 +100,8 @@
         "description": "[Kurt Vonnegut's] best book . . . He dares not only ask the ultimate question about the meaning of life, but to answer it.—Esquire\\nNominated as one of America's best-loved novels by PBS's The Great American Read\\nThe Sirens of Titan is an outrageous romp through space, time, and morality. The richest, most depraved man on Earth, Malachi Constant, is offered a chance to take a space journey to distant worlds with a beautiful woman at his side. Of course there's a catch to the invitation and a prophetic vision about the purpose of human life that only Vonnegut has the courage to tell.",
         "rating": 5,
         "reviews": [],
-        "pages": 336
+        "pages": 336,
+        "collections": ["Classic"]
     },
     
     {
@@ -108,7 +115,8 @@
         "description": "[Kurt Vonnegut's] best book . . . He dares not only ask the ultimate question about the meaning of life, but to answer it.—Esquire\\nNominated as one of America's best-loved novels by PBS's The Great American Read\\nThe Sirens of Titan is an outrageous romp through space, time, and morality. The richest, most depraved man on Earth, Malachi Constant, is offered a chance to take a space journey to distant worlds with a beautiful woman at his side. Of course there's a catch to the invitation and a prophetic vision about the purpose of human life that only Vonnegut has the courage to tell.",
         "rating": 5,
         "reviews": [],
-        "pages": 336
+        "pages": 336,
+        "collections": ["Classic"]
     },
     
     {
@@ -122,6 +130,7 @@
         "description": "[Kurt Vonnegut's] best book . . . He dares not only ask the ultimate question about the meaning of life, but to answer it.—Esquire\\nNominated as one of America's best-loved novels by PBS's The Great American Read\\nThe Sirens of Titan is an outrageous romp through space, time, and morality. The richest, most depraved man on Earth, Malachi Constant, is offered a chance to take a space journey to distant worlds with a beautiful woman at his side. Of course there's a catch to the invitation and a prophetic vision about the purpose of human life that only Vonnegut has the courage to tell.",
         "rating": 5,
         "reviews": [],
-        "pages": 336
+        "pages": 336,
+        "collections": ["Classic"]
     }
 ]

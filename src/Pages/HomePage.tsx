@@ -1,12 +1,14 @@
-import { BooksCarousel } from "../components/Books/BooksCarousel/BooksCarousel"
 // import { NavBar } from "../components/NavBar/Navbar"
+import { Collection } from "../components/Collection/Collection"
+
 
 
 export const HomePage = ()=>{
     return (
         <>
             {/* <NavBar /> */}
-            <BooksCarousel />
+            <Collection collection="Popular"/>
+            <Collection collection="Classic"/>
         </>
     )
 }

@@ -9,5 +9,6 @@ export interface BookInterface{
     pages: number,
     rating: number,
     reviews: [number] | [] | never[],
-    stock: number 
+    stock: number, 
+    collections: [] | string[] | never[]
 }
