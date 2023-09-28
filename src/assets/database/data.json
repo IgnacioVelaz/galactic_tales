@@ -1,0 +1,127 @@
+[
+    {
+        "isbn": 2385333498,
+        "title": "The Sirens of Titan",
+        "author": "Kurt Vonnegut Jr.",
+        "price": "$13.69",
+        "comparePrice": "$18.00",
+        "stock": 17,
+        "images": ["https://res.cloudinary.com/dsinhkkv3/image/upload/v1695897682/the-sirens-of-titan_sdobrh.jpg"],
+        "description": "[Kurt Vonnegut's] best book . . . He dares not only ask the ultimate question about the meaning of life, but to answer it.—Esquire\\nNominated as one of America's best-loved novels by PBS's The Great American Read\\nThe Sirens of Titan is an outrageous romp through space, time, and morality. The richest, most depraved man on Earth, Malachi Constant, is offered a chance to take a space journey to distant worlds with a beautiful woman at his side. Of course there's a catch to the invitation and a prophetic vision about the purpose of human life that only Vonnegut has the courage to tell.",
+        "rating": 5,
+        "reviews": [],
+        "pages": 336
+    },
+    
+    {
+        "isbn": 9123654082,
+        "title": "Robot Visions",
+        "author": "Isaac Asimov",
+        "price": "$13.69",
+        "comparePrice": "$18.00",
+        "stock": 17,
+        "images": ["https://res.cloudinary.com/dsinhkkv3/image/upload/v1695897683/robot-visions_zab8wb.jpg"],
+        "description": "[Kurt Vonnegut's] best book . . . He dares not only ask the ultimate question about the meaning of life, but to answer it.—Esquire\\nNominated as one of America's best-loved novels by PBS's The Great American Read\\nThe Sirens of Titan is an outrageous romp through space, time, and morality. The richest, most depraved man on Earth, Malachi Constant, is offered a chance to take a space journey to distant worlds with a beautiful woman at his side. Of course there's a catch to the invitation and a prophetic vision about the purpose of human life that only Vonnegut has the courage to tell.",
+        "rating": 5,
+        "reviews": [],
+        "pages": 336
+    },
+    
+    {
+        "isbn": 9781451673319,
+        "title": "Farenheit 451",
+        "author": "Ray Bradbury",
+        "price": "$13.69",
+        "comparePrice": "$18.00",
+        "stock": 17,
+        "images": ["https://res.cloudinary.com/dsinhkkv3/image/upload/v1695897682/farenheit-451_zrqvw6.jpg"],
+        "description": "[Kurt Vonnegut's] best book . . . He dares not only ask the ultimate question about the meaning of life, but to answer it.—Esquire\\nNominated as one of America's best-loved novels by PBS's The Great American Read\\nThe Sirens of Titan is an outrageous romp through space, time, and morality. The richest, most depraved man on Earth, Malachi Constant, is offered a chance to take a space journey to distant worlds with a beautiful woman at his side. Of course there's a catch to the invitation and a prophetic vision about the purpose of human life that only Vonnegut has the courage to tell.",
+        "rating": 5,
+        "reviews": [],
+        "pages": 336
+    },
+    
+    {
+        "isbn": 9780451524935,
+        "title": "1984",
+        "author": "George Orwell",
+        "price": "$13.69",
+        "comparePrice": "$18.00",
+        "stock": 17,
+        "images": ["https://res.cloudinary.com/dsinhkkv3/image/upload/v1695897682/1984_s42okj.jpg"],
+        "description": "[Kurt Vonnegut's] best book . . . He dares not only ask the ultimate question about the meaning of life, but to answer it.—Esquire\\nNominated as one of America's best-loved novels by PBS's The Great American Read\\nThe Sirens of Titan is an outrageous romp through space, time, and morality. The richest, most depraved man on Earth, Malachi Constant, is offered a chance to take a space journey to distant worlds with a beautiful woman at his side. Of course there's a catch to the invitation and a prophetic vision about the purpose of human life that only Vonnegut has the courage to tell.",
+        "rating": 5,
+        "reviews": [],
+        "pages": 336
+    },
+    
+    {
+        "isbn": 2156030306,
+        "title": "Flowers for Algernon",
+        "author": "Daniel Keyes",
+        "price": "$13.69",
+        "comparePrice": "$18.00",
+        "stock": 17,
+        "images": ["https://res.cloudinary.com/dsinhkkv3/image/upload/v1695897682/flowers-for-algernon_tabkqb.jpg"],
+        "description": "[Kurt Vonnegut's] best book . . . He dares not only ask the ultimate question about the meaning of life, but to answer it.—Esquire\\nNominated as one of America's best-loved novels by PBS's The Great American Read\\nThe Sirens of Titan is an outrageous romp through space, time, and morality. The richest, most depraved man on Earth, Malachi Constant, is offered a chance to take a space journey to distant worlds with a beautiful woman at his side. Of course there's a catch to the invitation and a prophetic vision about the purpose of human life that only Vonnegut has the courage to tell.",
+        "rating": 5,
+        "reviews": [],
+        "pages": 336
+    },
+    
+    {
+        "isbn": 2593082605,
+        "title": "Recursion",
+        "author": "Blake Crouch",
+        "price": "$13.69",
+        "comparePrice": "$18.00",
+        "stock": 17,
+        "images": ["https://res.cloudinary.com/dsinhkkv3/image/upload/v1695897683/recursion_snmhwj.jpg"],
+        "description": "[Kurt Vonnegut's] best book . . . He dares not only ask the ultimate question about the meaning of life, but to answer it.—Esquire\\nNominated as one of America's best-loved novels by PBS's The Great American Read\\nThe Sirens of Titan is an outrageous romp through space, time, and morality. The richest, most depraved man on Earth, Malachi Constant, is offered a chance to take a space journey to distant worlds with a beautiful woman at his side. Of course there's a catch to the invitation and a prophetic vision about the purpose of human life that only Vonnegut has the courage to tell.",
+        "rating": 5,
+        "reviews": [],
+        "pages": 336
+    },
+    
+    {
+        "isbn": 1848564961,
+        "title": "The Hitchhiker's Guide to the Galaxy",
+        "author": "Douglas Adams",
+        "price": "$13.69",
+        "comparePrice": "$18.00",
+        "stock": 17,
+        "images": ["https://res.cloudinary.com/dsinhkkv3/image/upload/v1695897682/the-hitchhikers-guide-to-the-galaxy_ujuxm6.jpg"],
+        "description": "[Kurt Vonnegut's] best book . . . He dares not only ask the ultimate question about the meaning of life, but to answer it.—Esquire\\nNominated as one of America's best-loved novels by PBS's The Great American Read\\nThe Sirens of Titan is an outrageous romp through space, time, and morality. The richest, most depraved man on Earth, Malachi Constant, is offered a chance to take a space journey to distant worlds with a beautiful woman at his side. Of course there's a catch to the invitation and a prophetic vision about the purpose of human life that only Vonnegut has the courage to tell.",
+        "rating": 5,
+        "reviews": [],
+        "pages": 336
+    },
+    
+    {
+        "isbn": 8576573008,
+        "title": "Neuromancer",
+        "author": "William Gibson",
+        "price": "$13.69",
+        "comparePrice": "$18.00",
+        "stock": 17,
+        "images": ["https://res.cloudinary.com/dsinhkkv3/image/upload/v1695897683/neuromancer_zbaibi.jpg"],
+        "description": "[Kurt Vonnegut's] best book . . . He dares not only ask the ultimate question about the meaning of life, but to answer it.—Esquire\\nNominated as one of America's best-loved novels by PBS's The Great American Read\\nThe Sirens of Titan is an outrageous romp through space, time, and morality. The richest, most depraved man on Earth, Malachi Constant, is offered a chance to take a space journey to distant worlds with a beautiful woman at his side. Of course there's a catch to the invitation and a prophetic vision about the purpose of human life that only Vonnegut has the courage to tell.",
+        "rating": 5,
+        "reviews": [],
+        "pages": 336
+    },
+    
+    {
+        "isbn": 2451530659,
+        "title": "The War of the Worlds",
+        "author": "H.G Wells",
+        "price": "$13.69",
+        "comparePrice": "$18.00",
+        "stock": 17,
+        "images": ["https://res.cloudinary.com/dsinhkkv3/image/upload/v1695897682/the-war-of-the-worlds_twaa0x.jpg"],
+        "description": "[Kurt Vonnegut's] best book . . . He dares not only ask the ultimate question about the meaning of life, but to answer it.—Esquire\\nNominated as one of America's best-loved novels by PBS's The Great American Read\\nThe Sirens of Titan is an outrageous romp through space, time, and morality. The richest, most depraved man on Earth, Malachi Constant, is offered a chance to take a space journey to distant worlds with a beautiful woman at his side. Of course there's a catch to the invitation and a prophetic vision about the purpose of human life that only Vonnegut has the courage to tell.",
+        "rating": 5,
+        "reviews": [],
+        "pages": 336
+    }
+]

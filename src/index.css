@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root{
+    --clr-white: #fff;
+    --clr-black: #000;
+    --clr-gray: #2A2C2E;
+
+    --clr-txt-primary: var(--clr-black);
+    --clr-txt-secondary: #F4BA30;
+    --clr-acc-primary: #F4CE47;
+    --clr-acc-secondary: #F4Ba30;
+    --clr-acc-tertiary: #8F1515;
+    --clr-bg-primary: #F5F2EE;
+    --clr-bg-secondary: var(--clr-white);
+
+    --ff-primary: 'Inter';
+    --ff-secondary: 'Jockey One';
+    --ff-tetriary: 'Orbitron';
+}
+
+body{
+    font-family: var(--ff-primary);
+}
