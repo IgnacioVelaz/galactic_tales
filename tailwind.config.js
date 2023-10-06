@@ -15,7 +15,12 @@ export default {
         accTertiary: 'var(--clr-acc-tertiary)',
         bgPrimary: 'var(--clr-bg-primary)',
         bgSecondary: 'var(--clr-bg-primary)',
-        Gray: 'var(--clr-gray)'
+        cGray: 'var(--clr-gray)'
+      },
+      boxShadow: {
+        solidL: '10px 10px 0px 0px var(--clr-gray)',
+        solidS: '5px 5px 0px 0px var(--clr-gray)',
+        solidXS: '2px 2px 0px 0px var(--clr-gray)'
       }
     },
   },

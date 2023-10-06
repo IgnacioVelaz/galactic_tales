@@ -1,9 +1,7 @@
 import { BookCard } from "../BookCard/BookCard"
 import { FC } from "react";
-
 import { Pagination, A11y } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react'
-
 import { BookInterface } from "../../../Interfaces/BookInterface";
 
 import 'swiper/css'
@@ -25,11 +23,12 @@ export const BooksCarousel:FC<BooksCarouselProps> = ({booksArray})=>{
     return (
         <Swiper
             modules={[Pagination, A11y]}
-            spaceBetween={50}
-            slidesPerView={'auto'}
+            spaceBetween={10}
+            slidesPerView={1}
             pagination={{ dynamicBullets: true }}
         >
             {booksCards}
         </Swiper>
     )
 }
+

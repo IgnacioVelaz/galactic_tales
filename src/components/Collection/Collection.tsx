@@ -1,14 +1,19 @@
 import { FC } from "react"
-import data from '../../assets/database/data.json'
 import { BooksCarousel } from "../Books/BooksCarousel/BooksCarousel"
 import { GiBookAura, GiBurningBook } from "react-icons/gi"
+import { useContext } from "react"
+import { BooksContext } from "../../assets/contexts/BooksContext"
+import { BookInterface } from "../../Interfaces/BookInterface"
 
 type CollectionProps = {
     collection: string
 }
 
 export const Collection:FC<CollectionProps> = ({collection})=>{
-    const collectionBooks = data.filter(book=>{
+    const context = useContext<BooksContextType>(BooksContext);
+    const { books } = context
+
+    const collectionBooks = books.filter((book:BookInterface)=>{
         return book.collections.includes(collection)
     })
 

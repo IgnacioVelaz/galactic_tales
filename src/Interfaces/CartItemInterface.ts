@@ -1,4 +1,4 @@
-export interface BookInterface{
+export interface CartItemInterface{
     isbn: number,
     title: string,
     author: string,
@@ -11,4 +11,5 @@ export interface BookInterface{
     reviews: [number] | [] | never[],
     stock: number, 
     collections: [] | string[] | never[], 
+    quantity: number
 }
