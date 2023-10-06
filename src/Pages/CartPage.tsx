@@ -9,8 +9,6 @@ export const CartPage = ()=>{
         navigate(-1)
     }
 
-    
-
     return (
         <div className="min-h-screen bg-bgPrimary relative">
             <header className="flex justify-center p-4 border-b-cGray border-b-4 relative">

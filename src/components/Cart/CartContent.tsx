@@ -1,12 +1,11 @@
 import { CartItem } from "./CartItem"
 import { useContext } from "react"
-import { BooksContext } from "../../assets/contexts/BooksContext"
 import { CartItemInterface } from "../../Interfaces/CartItemInterface"
-import { BooksContextType } from "../../assets/contexts/BooksContext"
+import { CartContext, CartContextType } from "../../assets/contexts/CartContext"
 
 
 export const CartContent = () => {
-  const context = useContext<BooksContextType>(BooksContext);
+  const context = useContext<CartContextType>(CartContext);
   const { cart } = context
 
   let cartItems

@@ -1,8 +1,7 @@
 import { BsHandbag } from 'react-icons/bs';
 import { FC, useContext } from 'react';
-import { BooksContext } from '../../assets/contexts/BooksContext';
 import { BookInterface } from '../../Interfaces/BookInterface';
-import { BooksContextType } from '../../assets/contexts/BooksContext';
+import { CartContext, CartContextType } from '../../assets/contexts/CartContext';
 
 type AtcButtonProps = {
   data: BookInterface
@@ -10,23 +9,13 @@ type AtcButtonProps = {
 
 export const AtcButton: FC<AtcButtonProps> = ({data}) => {
   console.log('data:', data)
-  const context = useContext<BooksContextType>(BooksContext);
+  const context = useContext<CartContextType>(CartContext);
   const { updateCartQuantity, cart, setCart } = context
 
   const addToCart = () => {
     const cartMatch = cart.find((item) => item.isbn === data.isbn);
     cartMatch ? updateCartQuantity(cartMatch) : addNewBookToCart();
   }
-
-
-  // const updateCartQuantity = (item: BookInterface, quantity = 1) => {
-  //   setCart(prevCart => prevCart.map(prevItem => {
-  //     if(prevItem.isbn === item.isbn){
-  //       return {...prevItem, quantity: prevItem.quantity + quantity};
-  //     }
-  //     return prevItem;
-  //   }));
-  // }
 
   const addNewBookToCart = (quantity = 1) => {
     setCart([...cart, {...data, quantity: quantity}]);

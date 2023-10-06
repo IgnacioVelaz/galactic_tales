@@ -5,16 +5,11 @@ import { CartItemInterface } from "../../Interfaces/CartItemInterface";
 export type BooksContextType = {
     books: BookInterface[],
     setBooks: Dispatch<SetStateAction<BookInterface[]>>,
-    cart: CartItemInterface[],
-    setCart: Dispatch<SetStateAction<CartItemInterface[]>>, 
 }
 
 export const BooksContext = createContext<BooksContextType>({
     books: [],
     setBooks: ()=>{},
-    cart: [],
-    setCart: ()=>{},
-    updateCartQuantity: ()=>{}
 });
 
 type BooksContextProviderProps = {
@@ -23,7 +18,6 @@ type BooksContextProviderProps = {
 
 export const BooksContextProvider = ({ children }: BooksContextProviderProps) => {
     const [books, setBooks] = useState<BookInterface[]>([]);
-    const [cart, setCart] = useState<CartItemInterface[]>([]);
 
     useEffect(() => {
         const getData = async () => {
@@ -34,17 +28,8 @@ export const BooksContextProvider = ({ children }: BooksContextProviderProps) =>
         getData();
     }, []);
 
-    const updateCartQuantity = (item: BookInterface, quantity = 1) => {
-        setCart(prevCart => prevCart.map(prevItem => {
-          if(prevItem.isbn === item.isbn){
-            return {...prevItem, quantity: prevItem.quantity + quantity};
-          }
-          return prevItem;
-        }));
-      }
-
     return (
-        <BooksContext.Provider value={{ updateCartQuantity, books, setBooks, cart, setCart }}>
+        <BooksContext.Provider value={{ books, setBooks }}>
             {children}
         </BooksContext.Provider>
     )
