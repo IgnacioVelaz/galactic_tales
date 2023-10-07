@@ -1,6 +1,5 @@
 import { createContext, useState, useEffect, ReactNode, Dispatch, SetStateAction } from "react";
 import { BookInterface } from "../../Interfaces/BookInterface";
-import { CartItemInterface } from "../../Interfaces/CartItemInterface";
 
 export type BooksContextType = {
     books: BookInterface[],

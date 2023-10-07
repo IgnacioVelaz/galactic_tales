@@ -10,11 +10,11 @@ type AtcButtonProps = {
 export const AtcButton: FC<AtcButtonProps> = ({data}) => {
   console.log('data:', data)
   const context = useContext<CartContextType>(CartContext);
-  const { updateCartQuantity, cart, setCart } = context
+  const { handleQuantityIncrease, cart, setCart } = context
 
   const addToCart = () => {
     const cartMatch = cart.find((item) => item.isbn === data.isbn);
-    cartMatch ? updateCartQuantity(cartMatch) : addNewBookToCart();
+    cartMatch ? handleQuantityIncrease(cartMatch) : addNewBookToCart();
   }
 
   const addNewBookToCart = (quantity = 1) => {
