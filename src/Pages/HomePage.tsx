@@ -1,16 +1,17 @@
-// import { NavBar } from "../components/NavBar/Navbar"
-// import { Cart } from "../components/Books/Cart/Cart"
 import { Collection } from "../components/Collection/Collection"
+import { ToastContainer } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
+
+
 
 
 
 export const HomePage = ()=>{
     return (
         <>
-            {/* <NavBar /> */}
             <Collection collection="Popular"/>
             <Collection collection="Classic"/>
-            {/* <Cart/> */}
+            <ToastContainer />
         </>
     )
 }

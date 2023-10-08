@@ -1,6 +1,10 @@
 import { createContext, useState, useEffect, ReactNode, Dispatch, SetStateAction } from "react";
 import { CartItemInterface } from "../../Interfaces/CartItemInterface";
 import { BookInterface } from "../../Interfaces/BookInterface";
+import { toast } from 'react-toastify'
+
+
+
 
 export type CartContextType = {
     cart: CartItemInterface[],
@@ -33,7 +37,7 @@ export const CartContextProvider = ({ children }: CartContextProviderProps) => {
         console.log('quantity increase')
         console.log(item.stock, item.quantity)
         if(item.stock >= item.quantity + 1) updateCartQuantity(item)
-        if(item.stock === item.quantity) console.log('All available units are in your cart')
+        if(item.stock === item.quantity) toast('All available units are in your cart')
     }
 
     const handleQuantityDecrease = (item: BookInterface)=>{

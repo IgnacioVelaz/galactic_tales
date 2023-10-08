@@ -1,6 +1,9 @@
 import { AiOutlineArrowLeft } from "react-icons/ai"
 import { CartContent } from "../components/Cart/CartContent"
 import { useNavigate } from "react-router-dom"
+import { ToastContainer } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
+
 
 export const CartPage = ()=>{
     const navigate = useNavigate()
@@ -20,6 +23,7 @@ export const CartPage = ()=>{
                 <h1 className="text-2xl uppercase">Your Cart</h1>
             </header>
             <CartContent />
+            <ToastContainer />
         </div>
     )
 }
