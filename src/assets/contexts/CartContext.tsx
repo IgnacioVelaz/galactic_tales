@@ -22,7 +22,12 @@ type CartContextProviderProps = {
 }
 
 export const CartContextProvider = ({ children }: CartContextProviderProps) => {
-    const [cart, setCart] = useState<CartItemInterface[]>([]);
+    const localCart = localStorage.getItem('cart')
+    const [cart, setCart] = useState<CartItemInterface[]>(localCart? JSON.parse(localCart): []);
+
+    useEffect(()=>{
+        cart? localStorage.setItem('cart', JSON.stringify(cart)) : null
+    }, [cart])
 
     const updateCartQuantity = (item: BookInterface, quantity = 1) => {
         setCart(prevCart => prevCart.map(prevItem => {
@@ -33,14 +38,14 @@ export const CartContextProvider = ({ children }: CartContextProviderProps) => {
         }));
       }
 
-    const handleQuantityIncrease = (item: BookInterface)=>{
+    const handleQuantityIncrease = (item: CartItemInterface)=>{
         console.log('quantity increase')
         console.log(item.stock, item.quantity)
         if(item.stock >= item.quantity + 1) updateCartQuantity(item)
         if(item.stock === item.quantity) toast('All available units are in your cart')
     }
 
-    const handleQuantityDecrease = (item: BookInterface)=>{
+    const handleQuantityDecrease = (item: CartItemInterface)=>{
         if(item.quantity > 1) updateCartQuantity(item, -1)
         if(item.quantity === 1 ) removeItemFromCart(item)   
     }
