@@ -5,6 +5,9 @@ import { BookPage } from "../Pages/BookPage"
 import { MainLayout } from "../Layouts/MainLayout"
 import { CartPage } from "../Pages/CartPage"
 import { NotFound } from "../Pages/NotFound"
+import { Checkout } from "../Pages/Checkout"
+import { PrivateRoute } from "./PrivateRoute"
+
 
 export const RouterPaths: FC = ()=>{
     return (
@@ -17,7 +20,12 @@ export const RouterPaths: FC = ()=>{
                     </Route>
                 </Route>
                 <Route path="/cart" element={<CartPage />}/>
-                <Route path="*" element={<NotFound />}></Route>
+                <Route path="/checkout" element={
+                <PrivateRoute>
+                    <Checkout />
+                </PrivateRoute> }
+                />
+                <Route path="*" element={<NotFound />}/>
             </Routes>
         </BrowserRouter>
     )

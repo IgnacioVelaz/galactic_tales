@@ -2,6 +2,7 @@ import { CartItem } from "./CartItem"
 import { useContext, useEffect, useState } from "react"
 import { CartItemInterface } from "../../Interfaces/CartItemInterface"
 import { CartContext, CartContextType } from "../../assets/contexts/CartContext"
+import { Link } from "react-router-dom"
 
 
 export const CartContent = () => {
@@ -36,7 +37,9 @@ export const CartContent = () => {
           <p>Total Amount:</p>
           <p>${cartTotal}</p>
         </div>  
-        <button className="w-full text-center py-4 bg-accPrimary">Go to Checkout</button>
+        <Link to="/checkout">
+          <button className="w-full text-center py-4 bg-accPrimary">Go to Checkout</button>
+        </Link>
       </div>
     </>
   )
