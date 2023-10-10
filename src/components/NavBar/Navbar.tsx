@@ -1,9 +1,9 @@
 import { NavLink } from "react-router-dom"
 import { BsFillHandbagFill } from "react-icons/bs"
 import { AiFillHome } from "react-icons/ai"
-import './navbar.css'
 import { useContext } from "react"
 import { AuthContext } from "../../assets/contexts/AuthContext/AuthContext"
+import './navbar.css'
 
 
 export const NavBar = ()=>{
@@ -26,7 +26,6 @@ export const NavBar = ()=>{
                             <button className="bg-accPrimary border-cGray border-2 py-1 px-2" 
                             onClick={()=> login('Vela')}>Login</button>
                         }
-                        
                     </li>
                 </ul>
             </nav>

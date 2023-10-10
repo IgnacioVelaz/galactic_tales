@@ -14,7 +14,7 @@ export const CartContent = () => {
     setCartTotal(cart.reduce(getCartTotal, 0))
   }, [cart])
 
-  const getCartTotal = (accumulator, currentValue) => {
+  const getCartTotal = (accumulator:number, currentValue: CartItemInterface) => {
     return Math.round((accumulator + currentValue.price * currentValue.quantity)*100) /100
   }
 

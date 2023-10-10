@@ -1,17 +1,22 @@
-import { useReducer } from "react"
+import { ReactNode, useReducer } from "react"
 import { AuthContext } from "./AuthContext"
 import { authTypes } from "./AuthTypes"
 import { AuthReducer } from "./AuthReducer"
 
 const init = () => {
-    const user = JSON.parse(localStorage.getItem('user'))
+    const localUser = localStorage.getItem('user')
+    const user = localUser && JSON.parse(localUser)
     return {
         isLogged: !!user,
         user
     }
 }
 
-export const AuthProvider = ({children}) => {
+type AuthProviderProps = {
+    children: ReactNode
+}
+
+export const AuthProvider = ({children}: AuthProviderProps) => {
     const [authState, dispatch] = useReducer(AuthReducer, {}, init)
 
     console.log(authState)

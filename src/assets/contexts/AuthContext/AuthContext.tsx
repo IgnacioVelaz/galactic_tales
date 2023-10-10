@@ -1,3 +1,13 @@
 import { createContext } from "react";
 
-export const AuthContext = createContext()
+type AuthContextType = {
+    authState: boolean
+    login: ()=> void
+    logout: ()=> void
+}
+
+export const AuthContext = createContext<AuthContextType>({
+    authState: false,
+    login: ()=>{},
+    logout: ()=>{}
+})

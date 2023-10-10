@@ -9,12 +9,17 @@ import { toast } from 'react-toastify'
 export type CartContextType = {
     cart: CartItemInterface[],
     setCart: Dispatch<SetStateAction<CartItemInterface[]>>, 
+    handleQuantityIncrease: (item:CartItemInterface)=>void,
+    handleQuantityDecrease: (item:CartItemInterface)=>void,
+    removeItemFromCart: (item:CartItemInterface)=> void
 }
 
 export const CartContext = createContext<CartContextType>({
     cart: [],
     setCart: ()=>{},
-    updateCartQuantity: ()=>{}
+    handleQuantityIncrease: ()=>{},
+    handleQuantityDecrease: ()=>{},
+    removeItemFromCart: ()=>{}
 });
 
 type CartContextProviderProps = {
