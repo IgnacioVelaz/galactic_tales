@@ -1,18 +1,18 @@
-import { UserInterface } from "../../../Interfaces/UserInterface";
+// import { UserInterface } from "../../../Interfaces/UserInterface";
 import { authTypes } from "./AuthTypes";
 
-interface AuthState {
-    isLogged: boolean, 
-    user?: {
-        id: number,
-        name: string
-    } | null
-}
+// interface AuthState {
+//     isLogged: boolean, 
+//     user?: {
+//         id: number,
+//         name: string
+//     } | null
+// }
 
-type AuthAction = {
-    type: string, 
-    payload: UserInterface
-}
+// type AuthAction = {
+//     type: string, 
+//     payload: UserInterface
+// }
     
 
 export const AuthReducer = (state, action) => {

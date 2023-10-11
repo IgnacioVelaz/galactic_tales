@@ -1,8 +1,12 @@
-import { useContext } from "react"
+import { ReactNode, useContext } from "react"
 import { AuthContext } from "../assets/contexts/AuthContext/AuthContext"
 import { Navigate } from "react-router-dom"
 
-export const PrivateRoute = ({children}) => {
+type PrivateRouteProps = {
+    children: ReactNode
+}
+
+export const PrivateRoute = ({children}:PrivateRouteProps) => {
     const { isLogged } = useContext(AuthContext)
 
     return isLogged ? children : <Navigate to="/login" />
