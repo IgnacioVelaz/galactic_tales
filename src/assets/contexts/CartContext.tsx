@@ -9,6 +9,7 @@ import { toast } from 'react-toastify'
 export type CartContextType = {
     cart: CartItemInterface[],
     setCart: Dispatch<SetStateAction<CartItemInterface[]>>, 
+    cartTotal: number,
     handleQuantityIncrease: (item:CartItemInterface)=>void,
     handleQuantityDecrease: (item:CartItemInterface)=>void,
     removeItemFromCart: (item:CartItemInterface)=> void
@@ -17,6 +18,7 @@ export type CartContextType = {
 export const CartContext = createContext<CartContextType>({
     cart: [],
     setCart: ()=>{},
+    cartTotal: 0,
     handleQuantityIncrease: ()=>{},
     handleQuantityDecrease: ()=>{},
     removeItemFromCart: ()=>{}
@@ -29,6 +31,16 @@ type CartContextProviderProps = {
 export const CartContextProvider = ({ children }: CartContextProviderProps) => {
     const localCart = localStorage.getItem('cart')
     const [cart, setCart] = useState<CartItemInterface[]>(localCart? JSON.parse(localCart): []);
+    const [cartTotal, setCartTotal] = useState(0)
+
+    //Chequear primero si hay items en el cart
+    useEffect(()=>{
+        setCartTotal(cart.reduce(getCartTotal, 0))
+    }, [cart])
+
+    const getCartTotal = (accumulator:number, currentValue: CartItemInterface) => {
+        return Math.round((accumulator + currentValue.price * currentValue.quantity)*100) /100
+    }
 
     useEffect(()=>{
         cart? localStorage.setItem('cart', JSON.stringify(cart)) : null
@@ -67,7 +79,7 @@ export const CartContextProvider = ({ children }: CartContextProviderProps) => {
     }
 
     return (
-        <CartContext.Provider value={{ cart, setCart, handleQuantityIncrease, handleQuantityDecrease, removeItemFromCart }}>
+        <CartContext.Provider value={{ cart, setCart, cartTotal, handleQuantityIncrease, handleQuantityDecrease, removeItemFromCart }}>
             {children}
         </CartContext.Provider>
     )

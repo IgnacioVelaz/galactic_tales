@@ -1,5 +1,5 @@
 import { CartItem } from "./CartItem"
-import { useContext, useEffect, useState } from "react"
+import { useContext } from "react"
 import { CartItemInterface } from "../../Interfaces/CartItemInterface"
 import { CartContext, CartContextType } from "../../assets/contexts/CartContext"
 import { Link } from "react-router-dom"
@@ -7,17 +7,8 @@ import { Link } from "react-router-dom"
 
 export const CartContent = () => {
   const context = useContext<CartContextType>(CartContext);
-  const { cart } = context
-  const [cartTotal, setCartTotal] = useState(0)
-
-  useEffect(()=>{
-    setCartTotal(cart.reduce(getCartTotal, 0))
-  }, [cart])
-
-  const getCartTotal = (accumulator:number, currentValue: CartItemInterface) => {
-    return Math.round((accumulator + currentValue.price * currentValue.quantity)*100) /100
-  }
-
+  const { cart, cartTotal } = context
+  
   let cartItems
 
   if(cart.length > 0){
