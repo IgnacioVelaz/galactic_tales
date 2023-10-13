@@ -1,11 +1,11 @@
-import { ChangeEvent, useContext } from "react"
+import { ChangeEvent, FC } from "react"
 import { BiSearch } from "react-icons/bi"
 import { Link, useSearchParams } from "react-router-dom"
-import { BooksContext } from "../../assets/contexts/BooksContext"
 
-export const SearchBar = () => {
+export const SearchBar = ({ data }) => {
     const [searchParams, setSearchParams] = useSearchParams()
-    const { books } = useContext(BooksContext)
+    
+    const books = data
     
     const handleQuery = (e:ChangeEvent<HTMLInputElement>) => {
         setSearchParams({ q: e.target.value })
@@ -36,7 +36,7 @@ export const SearchBar = () => {
                     book.title.toLowerCase().includes(query.toLowerCase()) ||
                     book.author.toLowerCase().includes(query.toLowerCase()) )
             }).map(book=> (
-            <Link to={`/books/${book.isbn}`}>
+            <Link key={book.isbn} to={`/books/${book.isbn}`}>
                 <div className="flex items-center p-2 gap-2">
                     <p>{book.title}</p>
                     <p className="text-xs">{book.author}</p>

@@ -1,13 +1,13 @@
 import { useEffect, useState } from "react"
 
-type UseFetchState = {
+type UseFetchState<T> = {
     state: "idle" | "loading" | "error" | "success",
-    data: null | any
+    data: null | T
     error: null | Error
 }
 
-export const useFetch = (url: string) =>{
-    const [ fetchState, setFetchState ] = useState<UseFetchState>({
+export const useFetch = <T>(url: string):UseFetchState<T> =>{
+    const [ fetchState, setFetchState ] = useState<UseFetchState<T>>({
         state: "idle",
         data: null,
         error: null
