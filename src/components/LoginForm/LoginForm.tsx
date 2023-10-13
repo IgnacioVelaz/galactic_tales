@@ -1,4 +1,5 @@
 import { useForm, SubmitHandler } from "react-hook-form"
+import { nanoid } from 'nanoid'
 
 type Inputs = {
   name: string
@@ -17,7 +18,7 @@ export function LoginForm() {
 
   const onSubmit: SubmitHandler<Inputs> = ({name, password}) => {
     const newUser = {
-      id: 123456,
+      id: nanoid(),
       name: name,
       password: password
     }
