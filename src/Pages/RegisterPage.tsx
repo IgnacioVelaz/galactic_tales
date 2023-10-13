@@ -1,19 +1,15 @@
 import { LimitedHeader } from "../components/LimitedHeader/LimitedHeader"
-import { LoginForm } from "../components/LoginForm/LoginForm"
+import { RegisterForm } from "../components/RegisterForm/RegisterForm"
 
 
 
-export const LoginPage  = ()=> {
-
-  
-
+export const RegisterPage = ()=> {
   return (
     <div className="bg-bgPrimary flex flex-col">
-      <LimitedHeader title="Login" />
+      <LimitedHeader title="Register" />
       <div className="justify-center flex items-center h-[90vh]">
-        <LoginForm />
+        <RegisterForm />
       </div>
-      
     </div>
   )
 }

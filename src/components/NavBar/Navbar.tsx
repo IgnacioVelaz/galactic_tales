@@ -27,7 +27,7 @@ export const NavBar = ()=>{
                             onClick={()=> login('Vela')}>Login</button>
                         }
                     </li>
-                    <Link to="/login">
+                    <Link to="/register">
                         <button className="bg-accPrimary border-cGray border-2 py-1 px-2">Register</button>
                     </Link>
                 </ul>

@@ -7,7 +7,7 @@ import { CartPage } from "../Pages/CartPage"
 import { NotFound } from "../Pages/NotFound"
 import { CheckoutPage } from "../Pages/CheckoutPage/CheckoutPage"
 import { PrivateRoute } from "./PrivateRoute"
-import { LoginPage } from "../Pages/LoginPage"
+import { RegisterPage } from "../Pages/RegisterPage"
 
 
 export const RouterPaths: FC = ()=>{
@@ -20,7 +20,7 @@ export const RouterPaths: FC = ()=>{
                         <Route path=":title" element={<BookPage />}/>
                     </Route>
                 </Route>
-                <Route path="/login" element={<LoginPage />}/>
+                <Route path="/register" element={<RegisterPage />}/>
                 <Route path="/cart" element={<CartPage />}/>
                 <Route path="/checkout" element={
                 <PrivateRoute>

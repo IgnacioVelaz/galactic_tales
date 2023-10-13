@@ -11,7 +11,7 @@ type Inputs = {
 }
 
 
-export function LoginForm() {
+export function RegisterForm() {
   const createUserMutation = useMutation(createUser)
 
   const {register, handleSubmit, watch, reset, formState: { errors }} = useForm<Inputs>({

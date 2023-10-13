@@ -213,6 +213,13 @@
       "id": "_LPiYcaONsSMxFbLAHoDz",
       "name": "userName06",
       "password": "12345678Tt$"
+    },
+    {
+      "id": "S2X5QL2Z6_0HHuKNyd4Pv",
+      "name": "userName07",
+      "password": "12345678Aa$",
+      "cart": [],
+      "wishlist": []
     }
   ]
 }
