@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom"
+import { Link, NavLink } from "react-router-dom"
 import { BsFillHandbagFill } from "react-icons/bs"
 import { AiFillHome } from "react-icons/ai"
 import { useContext } from "react"
@@ -27,6 +27,9 @@ export const NavBar = ()=>{
                             onClick={()=> login('Vela')}>Login</button>
                         }
                     </li>
+                    <Link to="/login">
+                        <button className="bg-accPrimary border-cGray border-2 py-1 px-2">Register</button>
+                    </Link>
                 </ul>
             </nav>
         </div>

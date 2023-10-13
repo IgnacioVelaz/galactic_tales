@@ -148,5 +148,19 @@
             "pages": 336,
             "collections": ["Classic"]
         }
+    ],
+    "users": [
+        {
+            "id": 1,
+            "name": "random_user_123",
+            "password": "RandomPassword123!",
+            "cart": []
+        },
+        {
+            "id": 2,
+            "name": "random_user_1234",
+            "password": "RandomPassword1234!",
+            "cart": []
+        }
     ]
 }

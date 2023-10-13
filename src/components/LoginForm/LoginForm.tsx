@@ -15,8 +15,13 @@ export function LoginForm() {
     }
   })
 
-  const onSubmit: SubmitHandler<Inputs> = (data) => {
-    console.log(data)
+  const onSubmit: SubmitHandler<Inputs> = ({name, password}) => {
+    const newUser = {
+      id: 123456,
+      name: name,
+      password: password
+    }
+    console.log(newUser)
     reset()
     }
 
