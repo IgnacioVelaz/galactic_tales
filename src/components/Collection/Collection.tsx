@@ -1,19 +1,26 @@
 import { FC } from "react"
 import { BooksCarousel } from "../Books/BooksCarousel/BooksCarousel"
 import { GiBookAura, GiBurningBook } from "react-icons/gi"
-import { useContext } from "react"
-import { BooksContext } from "../../assets/contexts/BooksContext"
 import { BookInterface } from "../../Interfaces/BookInterface"
+import { useFetch } from "../../Hooks/useFetch"
 
 type CollectionProps = {
     collection: string
 }
 
 export const Collection:FC<CollectionProps> = ({collection})=>{
-    const context = useContext<BooksContextType>(BooksContext);
-    const { books } = context
+    const { data, state, error  } = useFetch("http://localhost:3000/books")
+    console.log("booksData:", data)
 
-    const collectionBooks = books.filter((book:BookInterface)=>{
+    if(state === "loading" || state === "idle"){
+        return <div>Loading...</div>
+    }
+    
+    if(state === "error" || !data){
+        return <div>Error</div>
+    }
+
+    const collectionBooks = data.filter((book:BookInterface)=>{
         return book.collections.includes(collection)
     })
 
