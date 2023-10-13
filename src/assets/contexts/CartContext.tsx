@@ -3,9 +3,6 @@ import { CartItemInterface } from "../../Interfaces/CartItemInterface";
 import { BookInterface } from "../../Interfaces/BookInterface";
 import { toast } from 'react-toastify'
 
-
-
-
 export type CartContextType = {
     cart: CartItemInterface[],
     setCart: Dispatch<SetStateAction<CartItemInterface[]>>, 

@@ -29,7 +29,7 @@ export const BookCard:FC<BookCardProps> = ({book}) => {
                             " 
                             id={`"${isbn}"`}>
                 <div className="flex relative">
-                    <Link to={`/books/${isbn}`}>
+                    <Link to={`/books/${title}`}>
                     <img src={featuredImage} alt={`${title} Cover`} className="h-[450px]"/>
                     </Link>
                     <div className="bg-cGray h-fit p-2 rounded-full absolute right-2 top-2">

@@ -17,7 +17,7 @@ export const RouterPaths: FC = ()=>{
                 <Route element={<MainLayout />}>
                     <Route path="/" element={<HomePage />}/>
                     <Route path="/books">
-                        <Route path=":isbn" element={<BookPage />}/>
+                        <Route path=":title" element={<BookPage />}/>
                     </Route>
                 </Route>
                 <Route path="/login" element={<LoginPage />}/>
