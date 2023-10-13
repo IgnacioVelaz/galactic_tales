@@ -10,6 +10,4 @@ export const getUsers = async () => {
     return response.data
 }
 
-export const createUser = (user:UserInterface) => {
-    usersApi.post('', user)
-}
+export const createUser = (user:UserInterface) => usersApi.post('', user)
