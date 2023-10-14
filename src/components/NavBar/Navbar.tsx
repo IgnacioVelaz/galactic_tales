@@ -7,7 +7,7 @@ import './navbar.css'
 
 
 export const NavBar = ()=>{
-    const { isLogged, login, logout } = useContext(AuthContext)
+    const { isLogged, logout } = useContext(AuthContext)
     console.log(isLogged)
     return (
         <div className="w-full sticky bottom-0 z-10 bg-bgPrimary p-5 border-t-black border-t-2">
@@ -23,8 +23,9 @@ export const NavBar = ()=>{
                         {isLogged? 
                             <button className="bg-accPrimary border-cGray border-2 py-1 px-2"
                             onClick={logout}>Logout</button> :
-                            <button className="bg-accPrimary border-cGray border-2 py-1 px-2" 
-                            onClick={()=> login('Vela')}>Login</button>
+                            <Link to="/login">
+                            <button className="bg-accPrimary border-cGray border-2 py-1 px-2">Login</button>
+                            </Link>
                         }
                     </li>
                     <Link to="/register">

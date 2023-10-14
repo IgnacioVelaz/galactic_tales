@@ -1,7 +1,10 @@
-import { createContext, useState, useEffect, ReactNode, Dispatch, SetStateAction } from "react";
+import { createContext, useState, useEffect, ReactNode, Dispatch, SetStateAction, useContext } from "react";
 import { CartItemInterface } from "../../Interfaces/CartItemInterface";
 import { BookInterface } from "../../Interfaces/BookInterface";
 import { toast } from 'react-toastify'
+import { AuthContext } from "./AuthContext/AuthContext";
+import { useMutation } from "react-query";
+import { editUser } from "../../handleUsers/handleUsers";
 
 export type CartContextType = {
     cart: CartItemInterface[],
@@ -26,9 +29,20 @@ type CartContextProviderProps = {
 }
 
 export const CartContextProvider = ({ children }: CartContextProviderProps) => {
+    const editUserMutation = useMutation(editUser)
+    const { isLogged, user } = useContext(AuthContext)
+
     const localCart = localStorage.getItem('cart')
     const [cart, setCart] = useState<CartItemInterface[]>(localCart? JSON.parse(localCart): []);
     const [cartTotal, setCartTotal] = useState(0)
+
+    useEffect(()=>{
+        if(isLogged){
+            const editedUser = {...user, cart: cart}
+            editUserMutation.mutate(editedUser)
+          }
+    }, [cart])
+    
 
     //Chequear primero si hay items en el cart
     useEffect(()=>{

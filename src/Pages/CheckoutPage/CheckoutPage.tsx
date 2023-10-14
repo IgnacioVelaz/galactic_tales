@@ -7,7 +7,6 @@ export function CheckoutPage(){
       <div className="min-h-screen bg-bgPrimary relative">
       <LimitedHeader title="Checkout"/>
       <CheckoutContent />
-      
       </div>
   )
 }

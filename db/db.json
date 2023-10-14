@@ -185,40 +185,50 @@
   ],
   "users": [
     {
-      "id": "BW4Yk9A9hklDwxGBtk0nz",
-      "name": "newUser01",
-      "password": "passworD$2"
-    },
-    {
-      "id": "c9wDuSG1KEfdFZEZaBBSH",
-      "name": "newUser02",
-      "password": "12345678Ee5$"
-    },
-    {
-      "id": "YTm8GrmjlAYX4hlus6-_s",
-      "name": "newUser03",
-      "password": "12345678Ee$"
-    },
-    {
-      "id": "qH3MxMSHUtZhwH0Gi0yng",
-      "name": "newUser04",
-      "password": "12345678Tt$"
-    },
-    {
-      "id": "wrovI5oXJ1-yISzUB8kT1",
-      "name": "userName5",
-      "password": "12345678Aa$"
-    },
-    {
-      "id": "_LPiYcaONsSMxFbLAHoDz",
-      "name": "userName06",
-      "password": "12345678Tt$"
-    },
-    {
       "id": "S2X5QL2Z6_0HHuKNyd4Pv",
       "name": "userName07",
       "password": "12345678Aa$",
-      "cart": [],
+      "cart": [
+        {
+          "isbn": 9781451673319,
+          "title": "Farenheit 451",
+          "author": "Ray Bradbury",
+          "price": 21.49,
+          "comparePrice": 26,
+          "stock": 17,
+          "images": [
+            "https://res.cloudinary.com/dsinhkkv3/image/upload/v1695897682/farenheit-451_zrqvw6.jpg"
+          ],
+          "description": "Guy Montag is a fireman. His job is to destroy the most illegal of commodities, the printed book, along with the houses in which they are hidden. Montag never questions the destruction and ruin his actions produce, returning each day to his bland life and wife, Mildred, who spends all day with her television “family.” But when he meets an eccentric young neighbor, Clarisse, who introduces him to a past where people didn’t live in fear and to a present where one sees the world through the ideas in books instead of the mindless chatter of television, Montag begins to question everything he has ever known.",
+          "rating": 5,
+          "reviews": [],
+          "pages": 336,
+          "collections": [
+            "Popular",
+            "Classic"
+          ],
+          "quantity": 1
+        },
+        {
+          "isbn": 2593044623,
+          "title": "Las Aventuras de Iván y Célula",
+          "author": "Antonyo Andrei",
+          "price": 189.99,
+          "comparePrice": 199.99,
+          "stock": 17,
+          "images": [
+            "https://media.discordapp.net/attachments/1115884992619364434/1157268919799791708/Untitled-1.jpg?ex=6517fe2b&is=6516acab&hm=f573bd023dfffeaf35a13dd31eefb31ab319c3914fab82d8d25a4e6d1a456f7d&=&width=495&height=700"
+          ],
+          "description": "As Iván and Célula navigate the intricacies of the software development world, they find themselves confronted with unforeseen challenges, formidable foes, and thrilling quests that require them to harness their unique talents.\\nTogether, they strive to unlock the secrets of technology and the human spirit, all while tackling moral dilemmas and philosophical questions.",
+          "rating": 5,
+          "reviews": [],
+          "pages": 336,
+          "collections": [
+            "Popular"
+          ],
+          "quantity": 2
+        }
+      ],
       "wishlist": []
     }
   ]

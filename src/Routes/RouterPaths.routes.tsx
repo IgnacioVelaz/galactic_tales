@@ -8,6 +8,7 @@ import { NotFound } from "../Pages/NotFound"
 import { CheckoutPage } from "../Pages/CheckoutPage/CheckoutPage"
 import { PrivateRoute } from "./PrivateRoute"
 import { RegisterPage } from "../Pages/RegisterPage"
+import { LoginPage } from "../Pages/LoginPage"
 
 
 export const RouterPaths: FC = ()=>{
@@ -21,6 +22,7 @@ export const RouterPaths: FC = ()=>{
                     </Route>
                 </Route>
                 <Route path="/register" element={<RegisterPage />}/>
+                <Route path="/login" element={<LoginPage />}/>
                 <Route path="/cart" element={<CartPage />}/>
                 <Route path="/checkout" element={
                 <PrivateRoute>
