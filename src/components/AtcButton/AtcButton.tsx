@@ -11,21 +11,12 @@ type AtcButtonProps = {
 export const AtcButton: FC<AtcButtonProps> = ({data}) => {
   const context = useContext<CartContextType>(CartContext)
 
-  const { handleQuantityIncrease, cart, setCart } = context
-
-  const addToCart = () => {
-    const cartMatch = cart.find((item) => item.isbn === data.isbn)
-    cartMatch ? handleQuantityIncrease(cartMatch) : addNewBookToCart()  
-  }
-
-  const addNewBookToCart = (quantity = 1) => {
-    setCart([...cart, {...data, quantity: quantity}])
-  }
+  const { addToCart } = context
 
   return (
     <button
       className="flex bg-accPrimary p-4 border-2 border-cGray w-full justify-center"
-      onClick={()=> addToCart()}
+      onClick={()=> addToCart(data)}
     >
       <span className="uppercase">Add to Cart</span>
       <BsHandbag />

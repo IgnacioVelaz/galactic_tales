@@ -59,13 +59,23 @@ export const CartContextProvider = ({ children }: CartContextProviderProps) => {
     }, [cart])
 
     const updateCartQuantity = (item: BookInterface, quantity = 1) => {
-        
+
         setCart(prevCart => prevCart.map(prevItem => {
           if(prevItem.isbn === item.isbn){
             return {...prevItem, quantity: prevItem.quantity + quantity};
           }
           return prevItem;
         }));
+      }
+
+      const addToCart = (data) => {
+        console.log('data:',data)
+        const cartMatch = cart.find((item) => item.isbn === data.isbn)
+        cartMatch ? handleQuantityIncrease(cartMatch) : addNewBookToCart(data)  
+      }
+    
+      const addNewBookToCart = (data, quantity = 1) => {
+        setCart([...cart, {...data, quantity: quantity}])
       }
 
     const handleQuantityIncrease = (item: CartItemInterface)=>{
@@ -92,7 +102,7 @@ export const CartContextProvider = ({ children }: CartContextProviderProps) => {
     }
 
     return (
-        <CartContext.Provider value={{ cart, setCart, cartTotal, handleQuantityIncrease, handleQuantityDecrease, removeItemFromCart }}>
+        <CartContext.Provider value={{ cart, setCart, cartTotal, handleQuantityIncrease, handleQuantityDecrease, removeItemFromCart, addToCart }}>
             {children}
         </CartContext.Provider>
     )
