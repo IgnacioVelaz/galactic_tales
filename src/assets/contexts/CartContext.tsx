@@ -31,17 +31,18 @@ type CartContextProviderProps = {
 export const CartContextProvider = ({ children }: CartContextProviderProps) => {
     const editUserMutation = useMutation(editUser)
     const { isLogged, user } = useContext(AuthContext)
-
+    
     const localCart = localStorage.getItem('cart')
-    const [cart, setCart] = useState<CartItemInterface[]>(localCart? JSON.parse(localCart): []);
+    const initialCart = localCart? JSON.parse(localCart) : []
+    const [cart, setCart] = useState<CartItemInterface[]>(initialCart);
     const [cartTotal, setCartTotal] = useState(0)
 
-    useEffect(()=>{
-        if(isLogged){
-            const editedUser = {...user, cart: cart}
-            editUserMutation.mutate(editedUser)
-          }
-    }, [cart])
+    // useEffect(()=>{
+    //     if(isLogged){
+    //         const editedUser = {...user, cart: cart}
+    //         editUserMutation.mutate(editedUser)
+    //       }
+    // }, [cart])
     
 
     //Chequear primero si hay items en el cart
@@ -58,6 +59,7 @@ export const CartContextProvider = ({ children }: CartContextProviderProps) => {
     }, [cart])
 
     const updateCartQuantity = (item: BookInterface, quantity = 1) => {
+        
         setCart(prevCart => prevCart.map(prevItem => {
           if(prevItem.isbn === item.isbn){
             return {...prevItem, quantity: prevItem.quantity + quantity};
