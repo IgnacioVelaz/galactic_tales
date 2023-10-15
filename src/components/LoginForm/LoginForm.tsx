@@ -4,6 +4,7 @@ import { getUsers } from "../../handleUsers/handleUsers"
 import { UserInterface } from "../../Interfaces/UserInterface"
 import { useContext } from "react"
 import { AuthContext } from "../../assets/contexts/AuthContext/AuthContext"
+import { CartContext } from "../../assets/contexts/CartContext"
 
 type Inputs = {
     name: string
@@ -12,6 +13,7 @@ type Inputs = {
 
 export const LoginForm = () => {
     const { login } = useContext(AuthContext)
+    const { cart, setCart } = useContext(CartContext)
     const {register, handleSubmit, reset, formState: { errors }} = useForm<Inputs>({
         defaultValues: {
             name: '',
@@ -28,9 +30,8 @@ export const LoginForm = () => {
 
     const onSubmit: SubmitHandler<Inputs> = ({name, password}) => {
         const user = users.find((user:UserInterface) => user.name === name && user.password === password)
-        {user && login(user)}
+        {user && login(user, cart, setCart)}
         {!user && console.log('Wrong username or password')}
-        
         reset()
       }
 

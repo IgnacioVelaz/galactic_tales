@@ -35,7 +35,7 @@ export const CartContextProvider = ({ children }: CartContextProviderProps) => {
     const editUserMutation = useMutation(editUser)
     const getUsersMutation = useMutation(getUsers)
     
-    const { isLogged, user } = useContext(AuthContext)
+    const { isLogged, user, login } = useContext(AuthContext)
     
     const localCart = localStorage.getItem('cart')
     const initialCart = localCart? JSON.parse(localCart) : []
@@ -58,21 +58,6 @@ export const CartContextProvider = ({ children }: CartContextProviderProps) => {
             editUserMutation.mutate(editedUser)
           }
     }, [cart])
-
-    useEffect(()=>{
-        if(isLogged){
-            const updateCart = async()=>{
-                const users = await getUsers()
-                const currentUser = users.find(serverUser => serverUser.id === user.id)
-                setCart(prevCart => mergeCarts(prevCart, currentUser.cart))
-            }
-           updateCart()
-        }
-        if(!isLogged){
-            setCart([])
-            localStorage.setItem('cart', '')
-        }
-    }, [isLogged])
     
     useEffect(()=>{
         cart? localStorage.setItem('cart', JSON.stringify(cart)) : null

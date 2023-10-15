@@ -4,10 +4,12 @@ import { AiFillHome } from "react-icons/ai"
 import { useContext } from "react"
 import { AuthContext } from "../../assets/contexts/AuthContext/AuthContext"
 import './navbar.css'
+import { CartContext } from "../../assets/contexts/CartContext"
 
 
 export const NavBar = ()=>{
     const { isLogged, logout } = useContext(AuthContext)
+    const { setCart } = useContext(CartContext)
     console.log(isLogged)
     return (
         <div className="w-full sticky bottom-0 z-10 bg-bgPrimary p-5 border-t-black border-t-2">
@@ -22,7 +24,7 @@ export const NavBar = ()=>{
                     <li>
                         {isLogged? 
                             <button className="bg-accPrimary border-cGray border-2 py-1 px-2"
-                            onClick={logout}>Logout</button> :
+                            onClick={()=> logout(setCart)}>Logout</button> :
                             <Link to="/login">
                             <button className="bg-accPrimary border-cGray border-2 py-1 px-2">Login</button>
                             </Link>
