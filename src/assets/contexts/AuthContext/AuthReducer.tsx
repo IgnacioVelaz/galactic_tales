@@ -1,5 +1,6 @@
-// import { UserInterface } from "../../../Interfaces/UserInterface";
 import { authTypes } from "./AuthTypes";
+
+
 
 export const AuthReducer = (state, action) => {
     switch(action.type){

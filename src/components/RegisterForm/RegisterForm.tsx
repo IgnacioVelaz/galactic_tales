@@ -3,7 +3,6 @@ import { nanoid } from 'nanoid'
 import { useMutation} from 'react-query'
 import { createUser } from "../../handleUsers/handleUsers"
 
-
 type Inputs = {
   name: string
   password: string,
@@ -30,7 +29,6 @@ export function RegisterForm() {
       cart: [],
       wishlist: []
     }
-    console.log(newUser)
     
     createUserMutation.mutate(newUser)
     reset()

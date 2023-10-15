@@ -5,6 +5,6 @@ export interface UserInterface{
     id: string,
     name: string, 
     password: string,
-    cart: CartItemInterface[],
-    wishlist: [] | BookInterface
+    cart: CartItemInterface[] | [] | never[],
+    wishlist: [] | BookInterface[] | never[]
 }
