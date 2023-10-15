@@ -3,9 +3,9 @@ import { CartItemInterface } from "../../Interfaces/CartItemInterface";
 import { BookInterface } from "../../Interfaces/BookInterface";
 import { toast } from 'react-toastify'
 import { AuthContext } from "./AuthContext/AuthContext";
-import { useMutation, useQuery } from "react-query";
-import { editUser, getUsers } from "../../handleUsers/handleUsers";
-import { mergeCarts } from "../../utils/mergeCarts";
+import { useMutation } from "react-query";
+import { editUser } from "../../handleUsers/handleUsers";
+import { UserInterface } from "../../Interfaces/UserInterface";
 
 export type CartContextType = {
     cart: CartItemInterface[],
@@ -33,9 +33,8 @@ type CartContextProviderProps = {
 
 export const CartContextProvider = ({ children }: CartContextProviderProps) => {
     const editUserMutation = useMutation(editUser)
-    const getUsersMutation = useMutation(getUsers)
     
-    const { isLogged, user, login } = useContext(AuthContext)
+    const { isLogged, user } = useContext(AuthContext)
     
     const localCart = localStorage.getItem('cart')
     const initialCart = localCart? JSON.parse(localCart) : []
@@ -43,7 +42,6 @@ export const CartContextProvider = ({ children }: CartContextProviderProps) => {
     const [cartTotal, setCartTotal] = useState(0)
 
    
-    //Chequear primero si hay items en el cart
     useEffect(()=>{
         setCartTotal(cart.reduce(getCartTotal, 0))
     }, [cart])
@@ -54,7 +52,7 @@ export const CartContextProvider = ({ children }: CartContextProviderProps) => {
 
     useEffect(()=>{
         if(isLogged){
-            const editedUser = {...user, cart: cart}
+            const editedUser = {...user, cart: cart} as UserInterface
             editUserMutation.mutate(editedUser)
           }
     }, [cart])

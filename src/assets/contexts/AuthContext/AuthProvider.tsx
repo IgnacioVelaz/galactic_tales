@@ -3,7 +3,7 @@ import { AuthContext } from "./AuthContext"
 import { authTypes } from "./AuthTypes"
 import { AuthReducer } from "./AuthReducer"
 import { UserInterface } from "../../../Interfaces/UserInterface"
-import { useMutation, useQuery } from "react-query"
+import { useMutation } from "react-query"
 import { editUser, getUsers } from "../../../handleUsers/handleUsers"
 import { mergeCarts } from "../../../utils/mergeCarts"
 

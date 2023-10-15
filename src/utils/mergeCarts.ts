@@ -14,7 +14,7 @@ export const mergeCarts = (local:[CartItemInterface], remote:[CartItemInterface]
       }
     })
     remote.forEach(remoteItem => {
-      const coincidence = mergedCarts.find(localItem => localItem.isbn === remoteItem.isbn)
+      const coincidence = mergedCarts && mergedCarts.find(localItem => localItem?.isbn === remoteItem.isbn)
       if(!coincidence){
         mergedCarts.push(remoteItem)
       }
