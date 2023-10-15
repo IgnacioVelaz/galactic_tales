@@ -3,8 +3,8 @@ import { CartItemInterface } from "../../Interfaces/CartItemInterface";
 import { BookInterface } from "../../Interfaces/BookInterface";
 import { toast } from 'react-toastify'
 import { AuthContext } from "./AuthContext/AuthContext";
-import { useMutation } from "react-query";
-import { editUser } from "../../handleUsers/handleUsers";
+import { useMutation, useQuery } from "react-query";
+import { editUser, getUsers } from "../../handleUsers/handleUsers";
 
 export type CartContextType = {
     cart: CartItemInterface[],
@@ -32,8 +32,9 @@ type CartContextProviderProps = {
 
 export const CartContextProvider = ({ children }: CartContextProviderProps) => {
     const editUserMutation = useMutation(editUser)
+    const getUsersMutation = useMutation(getUsers)
+    
     const { isLogged, user } = useContext(AuthContext)
-    const { userCart } = user 
     
     const localCart = localStorage.getItem('cart')
     const initialCart = localCart? JSON.parse(localCart) : []
@@ -50,12 +51,23 @@ export const CartContextProvider = ({ children }: CartContextProviderProps) => {
         return Math.round((accumulator + currentValue.price * currentValue.quantity)*100) /100
     }
 
-    // useEffect(()=>{
-    //     if(isLogged){
-    //         const editedUser = {...user, cart: cart}
-    //         editUserMutation.mutate(editedUser)
-    //       }
-    // }, [cart])
+    useEffect(()=>{
+        if(isLogged){
+            const editedUser = {...user, cart: cart}
+            editUserMutation.mutate(editedUser)
+          }
+    }, [cart])
+
+    useEffect(()=>{
+        if(isLogged){
+            const updateCart = async()=>{
+                const users = await getUsers()
+                const currentUser = users.find(serverUser => serverUser.id === user.id)
+                setCart(currentUser.cart)
+            }
+           updateCart()
+        }
+    }, [isLogged])
     
     useEffect(()=>{
         cart? localStorage.setItem('cart', JSON.stringify(cart)) : null

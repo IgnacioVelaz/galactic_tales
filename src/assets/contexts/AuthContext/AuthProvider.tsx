@@ -3,8 +3,8 @@ import { AuthContext } from "./AuthContext"
 import { authTypes } from "./AuthTypes"
 import { AuthReducer } from "./AuthReducer"
 import { UserInterface } from "../../../Interfaces/UserInterface"
-import { useMutation } from "react-query"
-import { editUser } from "../../../handleUsers/handleUsers"
+import { useMutation, useQuery } from "react-query"
+import { editUser, getUsers } from "../../../handleUsers/handleUsers"
 
 const init = () => {
     const localUser = localStorage.getItem('user')
@@ -22,9 +22,7 @@ type AuthProviderProps = {
 export const AuthProvider = ({children}: AuthProviderProps) => {
     const [authState, dispatch] = useReducer(AuthReducer, {}, init)
     const editUserMutation = useMutation(editUser)
-
-    console.log(authState)
-
+    
     const login = (user:UserInterface) =>{
         localStorage.setItem('user', JSON.stringify(user))
         dispatch({type: authTypes.login, payload: user})

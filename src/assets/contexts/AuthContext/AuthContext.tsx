@@ -7,7 +7,7 @@ type AuthContextType = {
         name: string
     } | null
     login: (name?:string)=> void
-    logout: ()=> void
+    logout: ()=> void,
 }
 
 export const AuthContext = createContext<AuthContextType>({
