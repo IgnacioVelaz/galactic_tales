@@ -2,6 +2,9 @@ import { useForm, SubmitHandler } from "react-hook-form"
 import { nanoid } from 'nanoid'
 import { useMutation} from 'react-query'
 import { createUser } from "../../handleUsers/handleUsers"
+import { toast } from "react-toastify"
+import { useNavigate } from "react-router-dom"
+
 
 type Inputs = {
   name: string
@@ -12,6 +15,7 @@ type Inputs = {
 
 export function RegisterForm() {
   const createUserMutation = useMutation(createUser)
+  const navigate = useNavigate()
 
   const {register, handleSubmit, watch, reset, formState: { errors }} = useForm<Inputs>({
     defaultValues: {
@@ -32,6 +36,11 @@ export function RegisterForm() {
     
     createUserMutation.mutate(newUser)
     reset()
+
+    toast(`Welcome to the family ${newUser.name}`)
+    toast('Redirecting to the home page')
+
+    setTimeout(()=> navigate('/'),2000)
   }
     
 

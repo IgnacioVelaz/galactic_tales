@@ -1,7 +1,7 @@
 import { CartContent } from "../components/Cart/CartContent"
 import { ToastContainer } from 'react-toastify'
-import 'react-toastify/dist/ReactToastify.css'
 import { LimitedHeader } from "../components/LimitedHeader/LimitedHeader"
+import 'react-toastify/dist/ReactToastify.css'
 
 
 export const CartPage = ()=>{

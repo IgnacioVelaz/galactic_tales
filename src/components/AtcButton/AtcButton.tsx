@@ -1,4 +1,4 @@
-import { BsFillHandbagFill, BsHandbag } from 'react-icons/bs';
+import { BsFillHandbagFill } from 'react-icons/bs';
 import { FC, useContext } from 'react';
 import { BookInterface } from '../../Interfaces/BookInterface'
 import { CartContext, CartContextType } from '../../assets/contexts/CartContext'

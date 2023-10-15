@@ -7,6 +7,9 @@ import { useMutation } from "react-query"
 import { editUser, getUsers } from "../../../handleUsers/handleUsers"
 import { mergeCarts } from "../../../utils/mergeCarts"
 import { CartItemInterface } from "../../../Interfaces/CartItemInterface"
+import { toast } from 'react-toastify'
+
+
 
 const init = () => {
     const localUser = localStorage.getItem('user')
@@ -25,17 +28,15 @@ export const AuthProvider = ({children}: AuthProviderProps) => {
     const [authState, dispatch] = useReducer(AuthReducer, {}, init)
     const editUserMutation = useMutation(editUser)
     
-    
     const login = (user:UserInterface, setCart:Dispatch<SetStateAction<CartItemInterface[]>>) =>{
         localStorage.setItem('user', JSON.stringify(user))
-
         const updateCart = async()=>{
             const users = await getUsers()
             const currentUser:UserInterface = users.find((serverUser:UserInterface) => serverUser.id === user.id)
             setCart(prevCart => mergeCarts(prevCart, currentUser.cart))
         }
         updateCart()
-
+        toast(`Welcome back ${user.name}`)
         dispatch({type: authTypes.login, payload: user})
     }
 
@@ -44,6 +45,7 @@ export const AuthProvider = ({children}: AuthProviderProps) => {
         localStorage.removeItem('cart')
         setCart([])
         localStorage.setItem('cart', '')
+        toast("Come back later!")
         dispatch({ type: authTypes.logout })
     }
 

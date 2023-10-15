@@ -1,5 +1,7 @@
 import { LimitedHeader } from "../components/LimitedHeader/LimitedHeader"
 import { LoginForm } from "../components/LoginForm/LoginForm"
+import { ToastContainer } from 'react-toastify'
+
 
 
 
@@ -10,6 +12,7 @@ export const LoginPage = ()=> {
       <div className="justify-center flex items-center h-[90vh]">
         <LoginForm />
       </div>
+      <ToastContainer />
     </div>
   )
 }

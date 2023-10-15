@@ -190,6 +190,20 @@
       "password": "12345678Aa$",
       "cart": [],
       "wishlist": []
+    },
+    {
+      "id": "MKEEbssdDMsyQFdpVDxzw",
+      "name": "userq",
+      "password": "12345678Aa$",
+      "cart": [],
+      "wishlist": []
+    },
+    {
+      "id": "Pzn_hhaOerrNnyOdXkUdi",
+      "name": "anotherUser",
+      "password": "12345678Aa$",
+      "cart": [],
+      "wishlist": []
     }
   ]
 }

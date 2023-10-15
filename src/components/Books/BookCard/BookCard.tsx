@@ -1,5 +1,3 @@
-import { GoBookmark } from 'react-icons/go'
-import { AiOutlineStar } from 'react-icons/ai'
 import { AtcButton } from '../../AtcButton/AtcButton'
 import { FC } from 'react'
 import { BookInterface } from '../../../Interfaces/BookInterface'

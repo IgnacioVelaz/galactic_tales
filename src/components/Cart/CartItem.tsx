@@ -15,7 +15,8 @@ export const CartItem:FC<CartItemProps> = ({ book }) => {
 
   
   return (
-    <div className="
+    <div
+      className="
     border-4 
     z-10
     border-cGray 
@@ -26,23 +27,29 @@ export const CartItem:FC<CartItemProps> = ({ book }) => {
     grid
     bg-white 
     grid-cols-5
-    " 
+    "
     >
-      <img src={featuredImage} alt={`${title} cover`} className="p-2 col-span-2 h-full"/>
+      <img
+        src={featuredImage}
+        alt={`${title} cover`}
+        className="p-2 col-span-2 h-full"
+      />
       <div className="col-span-3 p-2 grid items-center grid-cols-3 grid-rows-2">
         <h3 className="col-span-2">{title}</h3>
-        <BiSolidTrashAlt className="
+        <BiSolidTrashAlt
+          className="
           ml-auto
           h-8 
           w-8 
           text-white 
           bg-cGray 
           p-1"
-          onClick={()=> removeItemFromCart(book)}
+          onClick={() => removeItemFromCart(book)}
         />
-        <p>${price*quantity}</p>
+        <p>${price * quantity}</p>
         <div className=" col-span-2 grid grid-cols-3 items-center">
-          <button aria-label="reduce quantity" 
+          <button
+            aria-label="reduce quantity"
             className="
               bg-accPrimary
               flex
@@ -54,11 +61,19 @@ export const CartItem:FC<CartItemProps> = ({ book }) => {
               border-2
               border-cGray
               shadow-solidXS"
-              onClick={()=> handleQuantityDecrease(book)}>
+            onClick={() => handleQuantityDecrease(book)}
+          >
             <AiOutlineMinus />
           </button>
-          <input  aria-aria-label="quantity" type="number" value={quantity} className="text-center"/>
-          <button aria-aria-label="increase quantity" 
+          <input
+            aria-label="quantity"
+            type="number"
+            value={quantity}
+            readOnly
+            className="text-center"
+          />
+          <button
+            aria-label="increase quantity"
             className="
               bg-accPrimary 
               flex justify-center 
@@ -69,12 +84,13 @@ export const CartItem:FC<CartItemProps> = ({ book }) => {
               border-2 
               border-cGray 
               shadow-solidXS"
-              onClick={()=> handleQuantityIncrease(book)}>
-            <AiOutlinePlus/>  
+            onClick={() => handleQuantityIncrease(book)}
+          >
+            <AiOutlinePlus />
           </button>
         </div>
       </div>
     </div>
-  )
+  );
 }
 
