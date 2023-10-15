@@ -38,20 +38,11 @@ export const BookCard:FC<BookCardProps> = ({book}) => {
               className="h-[450px]"
             />
           </Link>
-          <div className="bg-cGray h-fit p-2 rounded-full absolute right-2 top-2">
-            <GoBookmark className="w-8 h-8 text-white" />
-          </div>
+          
         </div>
-        <div className="flex">
-          <AiOutlineStar />
-          <AiOutlineStar />
-          <AiOutlineStar />
-          <AiOutlineStar />
-          <AiOutlineStar />
-        </div>
-        <p>By {author}</p>
-        <p>{title}</p>
-        <div className="flex">
+        <p className="text-sm font-bold">By {author}</p>
+        <p className="text-lg">{title}</p>
+        <div className="flex gap-4 text-lg">
           <span className="text-accTertiary line-through">${comparePrice}</span>
           <span>${price}</span>
         </div>

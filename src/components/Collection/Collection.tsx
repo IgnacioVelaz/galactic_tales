@@ -19,9 +19,9 @@ export const Collection:FC<CollectionProps> = ({ collection, data })=>{
         collection === "Classic"? <GiBookAura className="text-2xl" /> : undefined
 
     return (
-        <section>
-            <div className="flex justify-center items-center gap-2 p-6">
-                <h2 className="text-center text-2xl ">{collection}</h2> 
+        <section className="mt-12">
+            <div className="flex justify-center items-center gap-2 mt-6">
+                <h2 className="text-center text-2xl">{collection}</h2> 
                 {collectionIcon?? collectionIcon}
             </div>
             <BooksCarousel booksArray={collectionBooks}/>

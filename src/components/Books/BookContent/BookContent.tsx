@@ -60,7 +60,7 @@ export const BookContent:FC<BookContentProps> = ({book}) => {
               >
             <AiOutlineMinus />
           </button>
-          <input aria-label="quantity" type="number" value={quantity} className="text-center w-10 text-xl bg-none"/>
+          <input aria-label="quantity" type="number" value={quantity} readOnly className="text-center w-10 text-xl bg-none"/>
           <button aria-label="increase quantity" 
             className="
               bg-accPrimary 

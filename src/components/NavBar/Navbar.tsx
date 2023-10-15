@@ -3,7 +3,6 @@ import { BsFillHandbagFill } from "react-icons/bs"
 import { AiFillHome } from "react-icons/ai"
 import { useContext } from "react"
 import { AuthContext } from "../../assets/contexts/AuthContext/AuthContext"
-import './navbar.css'
 import { CartContext } from "../../assets/contexts/CartContext"
 
 
