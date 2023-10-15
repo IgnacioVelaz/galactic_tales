@@ -24,7 +24,7 @@ export const BookPage = ()=>{
     
     return (
         <>
-            {selectedBook? <BookCard book={selectedBook}/> : <p>There's no book with that isbn</p>}
+            {selectedBook? <BookCard book={selectedBook}/> : <p>There's no book with that title</p>}
         </>
     )
 }
