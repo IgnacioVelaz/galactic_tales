@@ -14,7 +14,7 @@ export type CartContextType = {
     handleQuantityIncrease: (item:CartItemInterface)=>void,
     handleQuantityDecrease: (item:CartItemInterface)=>void,
     removeItemFromCart: (item:CartItemInterface)=> void,
-    addToCart: (data:BookInterface) => void,
+    addToCart: (data:BookInterface, quantity:number) => void,
     cartQuantity: number
 }
 
