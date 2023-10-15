@@ -5,7 +5,7 @@ import { BookInterface } from "../../Interfaces/BookInterface"
 
 type CollectionProps = {
     collection: string,
-    data: [BookInterface],
+    data: BookInterface[],
 }
 
 export const Collection:FC<CollectionProps> = ({ collection, data })=>{

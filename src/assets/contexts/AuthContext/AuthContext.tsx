@@ -10,8 +10,8 @@ type AuthContextType = {
         cart: [],
         wishlist: []
     } | null
-    login: (name:string, cart:CartItemInterface[], setCart:Dispatch<SetStateAction<CartItemInterface[]>>)=> void
-    logout: ()=> void,
+    login: (name:string, setCart:Dispatch<SetStateAction<CartItemInterface[]>>)=> void
+    logout: (setCart:Dispatch<SetStateAction<CartItemInterface[]>>)=> void
 }
 
 export const AuthContext = createContext<AuthContextType>({

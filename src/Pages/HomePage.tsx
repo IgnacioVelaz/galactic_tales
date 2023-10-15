@@ -10,7 +10,7 @@ import { BookInterface } from "../Interfaces/BookInterface"
 
 
 export const HomePage = ()=>{
-    const { data, state, error  } = useFetch<[BookInterface]>("http://localhost:3000/books")
+    const { data, state, error  } = useFetch<BookInterface[]>("http://localhost:3000/books")
 
     if(state === "loading" || state === "idle"){
         return <p>Loading...</p>

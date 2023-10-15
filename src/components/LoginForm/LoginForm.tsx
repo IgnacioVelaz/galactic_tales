@@ -11,9 +11,10 @@ type Inputs = {
     password: string
   }
 
+
 export const LoginForm = () => {
     const { login } = useContext(AuthContext)
-    const { cart, setCart } = useContext(CartContext)
+    const { setCart } = useContext(CartContext)
     const {register, handleSubmit, reset, formState: { errors }} = useForm<Inputs>({
         defaultValues: {
             name: '',
@@ -24,13 +25,13 @@ export const LoginForm = () => {
     // Set inside custom hook ? It must be called only after submitting the form   
     const { isLoading, data: users, isError, error } = useQuery('users', getUsers)
     isLoading && console.log('loading')
-    isError && console.log(error.message)
+    isError && error instanceof Error && console.log(error.message)
     users && console.log(users)
     // End of the thing mentioned above
 
     const onSubmit: SubmitHandler<Inputs> = ({name, password}) => {
         const user = users.find((user:UserInterface) => user.name === name && user.password === password)
-        {user && login(user, cart, setCart)}
+        {user && login(user, setCart)}
         {!user && console.log('Wrong username or password')}
         reset()
       }

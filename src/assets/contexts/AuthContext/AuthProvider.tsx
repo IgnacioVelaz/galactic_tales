@@ -1,4 +1,4 @@
-import { ReactNode, useEffect, useReducer } from "react"
+import { Dispatch, ReactNode, SetStateAction, useEffect, useReducer } from "react"
 import { AuthContext } from "./AuthContext"
 import { authTypes } from "./AuthTypes"
 import { AuthReducer } from "./AuthReducer"
@@ -6,6 +6,7 @@ import { UserInterface } from "../../../Interfaces/UserInterface"
 import { useMutation } from "react-query"
 import { editUser, getUsers } from "../../../handleUsers/handleUsers"
 import { mergeCarts } from "../../../utils/mergeCarts"
+import { CartItemInterface } from "../../../Interfaces/CartItemInterface"
 
 const init = () => {
     const localUser = localStorage.getItem('user')
@@ -24,12 +25,12 @@ export const AuthProvider = ({children}: AuthProviderProps) => {
     const [authState, dispatch] = useReducer(AuthReducer, {}, init)
     const editUserMutation = useMutation(editUser)
     
-    const login = (user:UserInterface, cart, setCart) =>{
+    const login = (user:UserInterface, setCart:Dispatch<SetStateAction<CartItemInterface[]>>) =>{
         localStorage.setItem('user', JSON.stringify(user))
-        console.log('run')
+
         const updateCart = async()=>{
             const users = await getUsers()
-            const currentUser = users.find(serverUser => serverUser.id === user.id)
+            const currentUser = users.find((serverUser:UserInterface) => serverUser.id === user.id)
             setCart(prevCart => mergeCarts(prevCart, currentUser.cart))
         }
         updateCart()
@@ -37,7 +38,7 @@ export const AuthProvider = ({children}: AuthProviderProps) => {
         dispatch({type: authTypes.login, payload: user})
     }
 
-    const logout = (setCart) => {
+    const logout = (setCart:Dispatch<SetStateAction<CartItemInterface[]>>) => {
         localStorage.removeItem('user')
         localStorage.removeItem('cart')
         setCart([])
@@ -47,7 +48,8 @@ export const AuthProvider = ({children}: AuthProviderProps) => {
 
     useEffect(()=>{
         if(authState.isLogged){
-            const cart = JSON.parse(localStorage.getItem('cart'))
+            const jsonCart = localStorage.getItem('cart')
+            const cart = jsonCart && JSON.parse(jsonCart)
             if(cart){
             const editedUser = {...authState.user, cart: [...authState.user.cart, ...cart]}
             editUserMutation.mutate(editedUser)
