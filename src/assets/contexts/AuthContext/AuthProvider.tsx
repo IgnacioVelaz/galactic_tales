@@ -30,7 +30,7 @@ export const AuthProvider = ({children}: AuthProviderProps) => {
 
         const updateCart = async()=>{
             const users = await getUsers()
-            const currentUser = users.find((serverUser:UserInterface) => serverUser.id === user.id)
+            const currentUser:UserInterface = users.find((serverUser:UserInterface) => serverUser.id === user.id)
             setCart(prevCart => mergeCarts(prevCart, currentUser.cart))
         }
         updateCart()

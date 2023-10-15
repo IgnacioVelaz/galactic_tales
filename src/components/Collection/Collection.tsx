@@ -11,7 +11,7 @@ type CollectionProps = {
 export const Collection:FC<CollectionProps> = ({ collection, data })=>{
 
     const collectionBooks = data.filter(({collections})=>{
-        return collections.includes(collection)
+        return collections && collections.includes(collection) 
     })
 
     const collectionIcon = 

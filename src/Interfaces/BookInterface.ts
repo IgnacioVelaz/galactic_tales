@@ -10,5 +10,5 @@ export interface BookInterface{
     rating: number,
     reviews: [number] | [] | never[],
     stock: number, 
-    collections: [] | string[] | never[], 
+    collections: string[] 
 }

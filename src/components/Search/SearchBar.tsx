@@ -1,8 +1,13 @@
-import { ChangeEvent, FC } from "react"
+import { ChangeEvent } from "react"
 import { BiSearch } from "react-icons/bi"
 import { Link, useSearchParams } from "react-router-dom"
+import { BookInterface } from "../../Interfaces/BookInterface"
 
-export const SearchBar = ({ data }) => {
+type SearchBarPropsType = {
+    data: BookInterface[]
+}
+
+export const SearchBar = ({ data }: SearchBarPropsType) => {
     const [searchParams, setSearchParams] = useSearchParams()
     
     const books = data
