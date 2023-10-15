@@ -71,9 +71,9 @@ export const CartContextProvider = ({ children }: CartContextProviderProps) => {
         cart? localStorage.setItem('cart', JSON.stringify(cart)) : null
     }, [cart])
 
-    const addToCart = (data:BookInterface) => {
+    const addToCart = (data:BookInterface, quantity = 1) => {
         const cartMatch = cart.find((item) => item.id === data.id)
-        cartMatch ? handleQuantityIncrease(cartMatch) : addNewBookToCart(data)  
+        cartMatch ? handleQuantityIncrease(cartMatch, quantity) : addNewBookToCart(data, quantity)  
         console.log(cart.length+1)
     }
 
@@ -81,8 +81,8 @@ export const CartContextProvider = ({ children }: CartContextProviderProps) => {
         setCart([...cart, {...data, quantity: quantity}])
     }
 
-    const handleQuantityIncrease = (item: CartItemInterface)=>{
-        if(item.stock >= item.quantity + 1) updateCartQuantity(item)
+    const handleQuantityIncrease = (item: CartItemInterface, quantity = 1)=>{
+        if(item.stock >= item.quantity + 1) updateCartQuantity(item, quantity)
         if(item.stock === item.quantity) toast('All available units are in your cart')
     }
 

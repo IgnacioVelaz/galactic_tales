@@ -1,7 +1,7 @@
 import { useParams } from "react-router-dom"
-import { BookCard } from "../components/Books/BookCard/BookCard"
 import { BookInterface } from "../Interfaces/BookInterface"
 import { useFetch } from "../Hooks/useFetch"
+import { BookContent } from "../components/Books/BookContent/BookContent"
 
 
 export const BookPage = ()=>{
@@ -24,7 +24,7 @@ export const BookPage = ()=>{
     
     return (
         <>
-            {selectedBook? <BookCard book={selectedBook}/> : <p>There's no book with that title</p>}
+            {selectedBook? <BookContent book={selectedBook}/> : <p>There's no book with that title</p>}
         </>
     )
 }

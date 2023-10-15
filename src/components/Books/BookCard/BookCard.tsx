@@ -52,11 +52,11 @@ export const BookCard:FC<BookCardProps> = ({book}) => {
         <p>By {author}</p>
         <p>{title}</p>
         <div className="flex">
-          <span className="text-accTertiary">${comparePrice}</span>
+          <span className="text-accTertiary line-through">${comparePrice}</span>
           <span>${price}</span>
         </div>
 
-        <AtcButton data={book} />
+        <AtcButton data={book} quantity={1} />
       </div>
     );
 }
