@@ -25,6 +25,7 @@ export const AuthProvider = ({children}: AuthProviderProps) => {
     const [authState, dispatch] = useReducer(AuthReducer, {}, init)
     const editUserMutation = useMutation(editUser)
     
+    
     const login = (user:UserInterface, setCart:Dispatch<SetStateAction<CartItemInterface[]>>) =>{
         localStorage.setItem('user', JSON.stringify(user))
 

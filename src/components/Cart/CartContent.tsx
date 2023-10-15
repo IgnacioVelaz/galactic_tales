@@ -23,7 +23,8 @@ export const CartContent = () => {
       <div className="p-6 grid auto-rows-auto gap-10">
         { cartItems }
       </div>
-      <div className="sticky bottom-0 z-10 p-6 bg-bgPrimary">
+      {  cart.length > 0 &&
+        (<div className="sticky bottom-0 z-10 p-6 bg-bgPrimary">
         <div className="flex justify-between">
           <p>Total Amount:</p>
           <p>${cartTotal}</p>
@@ -31,7 +32,8 @@ export const CartContent = () => {
         <Link to="/checkout">
           <button className="w-full text-center py-4 bg-accPrimary">Go to Checkout</button>
         </Link>
-      </div>
+      </div>)
+      }
     </>
   )
 }

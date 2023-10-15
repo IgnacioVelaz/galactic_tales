@@ -9,7 +9,7 @@ import { CartContext } from "../../assets/contexts/CartContext"
 
 export const NavBar = ()=>{
     const { isLogged, logout } = useContext(AuthContext)
-    const { setCart } = useContext(CartContext)
+    const { setCart, cartQuantity } = useContext(CartContext)
     console.log(isLogged)
     return (
         <div className="w-full sticky bottom-0 z-10 bg-bgPrimary p-5 border-t-black border-t-2">
@@ -18,8 +18,19 @@ export const NavBar = ()=>{
                     <li>
                         <NavLink to="/"><button><AiFillHome className="h-8 w-8"/></button></NavLink>
                     </li>
-                    <li>
+                    <li className="relative">
                         <NavLink to="/cart"><button><BsFillHandbagFill className="h-8 w-8"/></button></NavLink>
+                        <span className="
+                        absolute 
+                        top-0 
+                        right-0 
+                        flex 
+                        justify-center 
+                        bg-accPrimary 
+                        text-xs 
+                        text-cGray 
+                        w-5
+                        pointer-events-none ">{cartQuantity}</span>
                     </li>
                     <li>
                         {isLogged? 
@@ -30,9 +41,10 @@ export const NavBar = ()=>{
                             </Link>
                         }
                     </li>
+                    {  !isLogged &&
                     <Link to="/register">
                         <button className="bg-accPrimary border-cGray border-2 py-1 px-2">Register</button>
-                    </Link>
+                    </Link>}
                 </ul>
             </nav>
         </div>

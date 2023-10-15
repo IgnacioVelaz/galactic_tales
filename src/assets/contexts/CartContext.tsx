@@ -14,7 +14,8 @@ export type CartContextType = {
     handleQuantityIncrease: (item:CartItemInterface)=>void,
     handleQuantityDecrease: (item:CartItemInterface)=>void,
     removeItemFromCart: (item:CartItemInterface)=> void,
-    addToCart: (data:BookInterface) => void
+    addToCart: (data:BookInterface) => void,
+    cartQuantity: number
 }
 
 export const CartContext = createContext<CartContextType>({
@@ -24,7 +25,8 @@ export const CartContext = createContext<CartContextType>({
     handleQuantityIncrease: ()=>{},
     handleQuantityDecrease: ()=>{},
     removeItemFromCart: ()=>{}, 
-    addToCart: ()=>{}
+    addToCart: ()=>{},
+    cartQuantity: 0
 });
 
 type CartContextProviderProps = {
@@ -40,7 +42,11 @@ export const CartContextProvider = ({ children }: CartContextProviderProps) => {
     const initialCart = localCart? JSON.parse(localCart) : []
     const [cart, setCart] = useState<CartItemInterface[]>(initialCart);
     const [cartTotal, setCartTotal] = useState(0)
+    const [cartQuantity, setCartQuantity] = useState(0)
 
+    useEffect(()=>{
+        setCartQuantity(cart.reduce(getCartQuantity, 0))
+    })
    
     useEffect(()=>{
         setCartTotal(cart.reduce(getCartTotal, 0))
@@ -48,6 +54,10 @@ export const CartContextProvider = ({ children }: CartContextProviderProps) => {
 
     const getCartTotal = (accumulator:number, currentValue: CartItemInterface) => {
         return Math.round((accumulator + currentValue.price * currentValue.quantity)*100) /100
+    }
+
+    const getCartQuantity = (accumulator:number, currentValue: CartItemInterface) => {
+        return (accumulator + currentValue.quantity)
     }
 
     useEffect(()=>{
@@ -62,9 +72,9 @@ export const CartContextProvider = ({ children }: CartContextProviderProps) => {
     }, [cart])
 
     const addToCart = (data:BookInterface) => {
-
         const cartMatch = cart.find((item) => item.isbn === data.isbn)
         cartMatch ? handleQuantityIncrease(cartMatch) : addNewBookToCart(data)  
+        console.log(cart.length+1)
     }
 
     const addNewBookToCart = (data:BookInterface, quantity = 1) => {
@@ -100,7 +110,7 @@ export const CartContextProvider = ({ children }: CartContextProviderProps) => {
     }
 
     return (
-        <CartContext.Provider value={{ cart, setCart, cartTotal, handleQuantityIncrease, handleQuantityDecrease, removeItemFromCart, addToCart }}>
+        <CartContext.Provider value={{ cart, setCart, cartTotal, handleQuantityIncrease, handleQuantityDecrease, removeItemFromCart, addToCart, cartQuantity }}>
             {children}
         </CartContext.Provider>
     )
