@@ -68,6 +68,10 @@ export const CartContextProvider = ({ children }: CartContextProviderProps) => {
             }
            updateCart()
         }
+        if(!isLogged){
+            setCart([])
+            localStorage.setItem('cart', '')
+        }
     }, [isLogged])
     
     useEffect(()=>{

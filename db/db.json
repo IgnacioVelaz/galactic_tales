@@ -190,25 +190,6 @@
       "password": "12345678Aa$",
       "cart": [
         {
-          "isbn": 9123654082,
-          "title": "Robot Visions",
-          "author": "Isaac Asimov",
-          "price": 17.49,
-          "comparePrice": 21.49,
-          "stock": 17,
-          "images": [
-            "https://res.cloudinary.com/dsinhkkv3/image/upload/v1695897683/robot-visions_zab8wb.jpg"
-          ],
-          "description": "'This collection offers 18 stories about robots as well as brief essays in which Asimov comments on robots in fiction, the Frankenstein complex, his famous Three Laws and the development of actual robots. The earliest tales here, written from 1940 to 1960, remain among the most-loved in the field,' —Publishers Weekly",
-          "rating": 5,
-          "reviews": [],
-          "pages": 336,
-          "collections": [
-            "Classic"
-          ],
-          "quantity": 3
-        },
-        {
           "isbn": 2385333498,
           "title": "The Sirens of Titan",
           "author": "Kurt Vonnegut Jr.",
@@ -226,6 +207,25 @@
             "Classic"
           ],
           "quantity": 2
+        },
+        {
+          "isbn": 9123654082,
+          "title": "Robot Visions",
+          "author": "Isaac Asimov",
+          "price": 17.49,
+          "comparePrice": 21.49,
+          "stock": 17,
+          "images": [
+            "https://res.cloudinary.com/dsinhkkv3/image/upload/v1695897683/robot-visions_zab8wb.jpg"
+          ],
+          "description": "'This collection offers 18 stories about robots as well as brief essays in which Asimov comments on robots in fiction, the Frankenstein complex, his famous Three Laws and the development of actual robots. The earliest tales here, written from 1940 to 1960, remain among the most-loved in the field,' —Publishers Weekly",
+          "rating": 5,
+          "reviews": [],
+          "pages": 336,
+          "collections": [
+            "Classic"
+          ],
+          "quantity": 3
         },
         {
           "isbn": 2593044623,
