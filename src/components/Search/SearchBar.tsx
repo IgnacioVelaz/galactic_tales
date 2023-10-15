@@ -19,8 +19,8 @@ export const SearchBar = ({ data }: SearchBarPropsType) => {
     const query = searchParams.get('q') ?? ""
 
     return (
-    <div className="flex flex-col items-center justify-center mt-4">
-        <div className="flex bg-white h-12 px-4 py-2 shadow-solidS border-cGray border items-center">
+    <div className="flex flex-col items-center justify-center pt-4 bg-bgPrimary">
+        <div className="flex bg-white h-12 px-4 py-2 shadow-solidS border-cGray border items-center relative">
             <BiSearch className="h-6 w-6 mr-2" />
             <input 
             type="search"
@@ -33,8 +33,7 @@ export const SearchBar = ({ data }: SearchBarPropsType) => {
             focus:outline-none
             "
             />
-        </div>
-        {query && <div className="bg-white border border-cGray mt-2 max-w-[80%]">
+            {query && <div className="bg-white border border-cGray mt-2 max-w-[80%] absolute top-[40px]">
             {books.filter(book => {
                 return (
                     book && 
@@ -49,6 +48,8 @@ export const SearchBar = ({ data }: SearchBarPropsType) => {
             </Link>
             ))}
         </div>}
+        </div>
+        
     </div>
     
   )

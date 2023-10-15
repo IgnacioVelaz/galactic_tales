@@ -1,6 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Jockey+One&display=swap');
 
 :root{
     --clr-white: #fff;
@@ -26,6 +27,10 @@ body{
 
 .swiper-pagination-bullet-active{
     background-color: var(--clr-acc-secondary);
+}
+
+.ff-secondary{
+    font-family: var(--ff-secondary);
 }
 
 input[type="search"]::-webkit-search-decoration,
