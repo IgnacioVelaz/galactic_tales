@@ -12,7 +12,7 @@ export const CartContent = () => {
   let cartItems
 
   if(cart.length > 0){
-    cartItems = cart.map((cartItem: CartItemInterface) => <CartItem book={cartItem} key={cartItem.isbn}/>)
+    cartItems = cart.map((cartItem: CartItemInterface) => <CartItem book={cartItem} key={cartItem.id}/>)
   }  
   if(cart.length === 0){
     cartItems = <h1>There are no items in Cart. Add something</h1>

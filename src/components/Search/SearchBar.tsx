@@ -41,7 +41,7 @@ export const SearchBar = ({ data }: SearchBarPropsType) => {
                     book.title.toLowerCase().includes(query.toLowerCase()) ||
                     book.author.toLowerCase().includes(query.toLowerCase()) )
             }).map(book=> (
-            <Link key={book.isbn} to={`/books/${book.title}`}>
+            <Link key={book.id} to={`/books/${book.title}`}>
                 <div className="flex items-center p-2 gap-2">
                     <p>{book.title}</p>
                     <p className="text-xs">{book.author}</p>

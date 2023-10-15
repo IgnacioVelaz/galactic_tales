@@ -20,7 +20,7 @@ export const NavBar = ()=>{
                     </li>
                     <li className="relative">
                         <NavLink to="/cart"><button><BsFillHandbagFill className="h-8 w-8"/></button></NavLink>
-                        <span className="
+                        {cartQuantity > 0 && <span className="
                         absolute 
                         top-0 
                         right-0 
@@ -30,7 +30,7 @@ export const NavBar = ()=>{
                         text-xs 
                         text-cGray 
                         w-5
-                        pointer-events-none ">{cartQuantity}</span>
+                        pointer-events-none ">{cartQuantity}</span>}
                     </li>
                     <li>
                         {isLogged? 
@@ -41,7 +41,7 @@ export const NavBar = ()=>{
                             </Link>
                         }
                     </li>
-                    {  !isLogged &&
+                    {!isLogged &&
                     <Link to="/register">
                         <button className="bg-accPrimary border-cGray border-2 py-1 px-2">Register</button>
                     </Link>}

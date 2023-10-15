@@ -14,21 +14,21 @@ type BooksCarouselProps = {
 export const BooksCarousel:FC<BooksCarouselProps> = ({booksArray})=>{
     const booksCards = booksArray.map(book=>{
         return (
-            <SwiperSlide key={book.isbn} className="flex justify-center p-10">
+            <SwiperSlide key={book.id} className="flex justify-center p-10">
                 <BookCard book={book}/>
             </SwiperSlide>
         )
     })
 
     return (
-        <Swiper
-            modules={[Pagination, A11y]}
-            spaceBetween={10}
-            slidesPerView={1}
-            pagination={{ dynamicBullets: true }}
-        >
-            {booksCards}
-        </Swiper>
-    )
+      <Swiper
+        modules={[Pagination, A11y]}
+        spaceBetween={10}
+        slidesPerView={1}
+        pagination={{ dynamicBullets: true }}
+      >
+        {booksCards}
+      </Swiper>
+    );
 }
 

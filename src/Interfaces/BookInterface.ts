@@ -1,5 +1,5 @@
 export interface BookInterface{
-    isbn: number,
+    id: number,
     title: string,
     author: string,
     comparePrice: string,

@@ -9,6 +9,7 @@ import { CheckoutPage } from "../Pages/CheckoutPage/CheckoutPage"
 import { PrivateRoute } from "./PrivateRoute"
 import { RegisterPage } from "../Pages/RegisterPage"
 import { LoginPage } from "../Pages/LoginPage"
+import { ThankYouPage } from "../Pages/ThankYouPage"
 
 
 export const RouterPaths: FC = ()=>{
@@ -27,6 +28,11 @@ export const RouterPaths: FC = ()=>{
                 <Route path="/checkout" element={
                 <PrivateRoute>
                     <CheckoutPage />
+                </PrivateRoute> }
+                />
+                <Route path="/thankyou" element={
+                <PrivateRoute>
+                    <ThankYouPage />
                 </PrivateRoute> }
                 />
                 <Route path="*" element={<NotFound />}/>

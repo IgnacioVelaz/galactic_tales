@@ -15,11 +15,12 @@ export const AtcButton: FC<AtcButtonProps> = ({data}) => {
 
   return (
     <button
-      className="flex bg-accPrimary p-4 border-2 border-cGray w-full justify-center"
+      className="flex bg-accPrimary p-4 border-2 border-cGray w-full justify-center disabled:opacity-50"
       onClick={()=> addToCart(data)}
+      disabled={data.stock === 0}
     >
-      <span className="uppercase">Add to Cart</span>
-      <BsHandbag />
+      <span className="uppercase">{ data.stock > 0 ? "Add to Cart" : "Out of Stock" }</span>
+      {data.stock > 0 &&<BsHandbag />}
     </button>
   );
 };

@@ -3,7 +3,7 @@ import { CartItemInterface } from "../Interfaces/CartItemInterface"
 
 export const mergeCarts = (local:CartItemInterface[], remote:CartItemInterface[]): CartItemInterface[] => {   
   const mergedCarts: CartItemInterface[] = local.map(localItem => {
-      const coincidence = remote.find(remoteItem => remoteItem.isbn === localItem.isbn)
+      const coincidence = remote.find(remoteItem => remoteItem.id === localItem.id)
       if(coincidence){
         return {
           ...localItem,
@@ -15,7 +15,7 @@ export const mergeCarts = (local:CartItemInterface[], remote:CartItemInterface[]
       }
     }) as CartItemInterface[]
     remote.forEach(remoteItem => {
-      const coincidence = mergedCarts && mergedCarts.find(localItem => localItem?.isbn === remoteItem.isbn)
+      const coincidence = mergedCarts && mergedCarts.find(localItem => localItem?.id === remoteItem.id)
       if(!coincidence){
         mergedCarts.push(remoteItem)
       }
