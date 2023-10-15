@@ -190,21 +190,21 @@
       "password": "12345678Aa$",
       "cart": [
         {
-          "isbn": 2593044623,
-          "title": "Las Aventuras de Iván y Célula",
-          "author": "Antonyo Andrei",
-          "price": 189.99,
-          "comparePrice": 199.99,
+          "isbn": 9123654082,
+          "title": "Robot Visions",
+          "author": "Isaac Asimov",
+          "price": 17.49,
+          "comparePrice": 21.49,
           "stock": 17,
           "images": [
-            "https://media.discordapp.net/attachments/1115884992619364434/1157268919799791708/Untitled-1.jpg?ex=6517fe2b&is=6516acab&hm=f573bd023dfffeaf35a13dd31eefb31ab319c3914fab82d8d25a4e6d1a456f7d&=&width=495&height=700"
+            "https://res.cloudinary.com/dsinhkkv3/image/upload/v1695897683/robot-visions_zab8wb.jpg"
           ],
-          "description": "As Iván and Célula navigate the intricacies of the software development world, they find themselves confronted with unforeseen challenges, formidable foes, and thrilling quests that require them to harness their unique talents.\\nTogether, they strive to unlock the secrets of technology and the human spirit, all while tackling moral dilemmas and philosophical questions.",
+          "description": "'This collection offers 18 stories about robots as well as brief essays in which Asimov comments on robots in fiction, the Frankenstein complex, his famous Three Laws and the development of actual robots. The earliest tales here, written from 1940 to 1960, remain among the most-loved in the field,' —Publishers Weekly",
           "rating": 5,
           "reviews": [],
           "pages": 336,
           "collections": [
-            "Popular"
+            "Classic"
           ],
           "quantity": 3
         },
@@ -225,24 +225,24 @@
           "collections": [
             "Classic"
           ],
-          "quantity": 1
+          "quantity": 2
         },
         {
-          "isbn": 9123654082,
-          "title": "Robot Visions",
-          "author": "Isaac Asimov",
-          "price": 17.49,
-          "comparePrice": 21.49,
+          "isbn": 2593044623,
+          "title": "Las Aventuras de Iván y Célula",
+          "author": "Antonyo Andrei",
+          "price": 189.99,
+          "comparePrice": 199.99,
           "stock": 17,
           "images": [
-            "https://res.cloudinary.com/dsinhkkv3/image/upload/v1695897683/robot-visions_zab8wb.jpg"
+            "https://media.discordapp.net/attachments/1115884992619364434/1157268919799791708/Untitled-1.jpg?ex=6517fe2b&is=6516acab&hm=f573bd023dfffeaf35a13dd31eefb31ab319c3914fab82d8d25a4e6d1a456f7d&=&width=495&height=700"
           ],
-          "description": "'This collection offers 18 stories about robots as well as brief essays in which Asimov comments on robots in fiction, the Frankenstein complex, his famous Three Laws and the development of actual robots. The earliest tales here, written from 1940 to 1960, remain among the most-loved in the field,' —Publishers Weekly",
+          "description": "As Iván and Célula navigate the intricacies of the software development world, they find themselves confronted with unforeseen challenges, formidable foes, and thrilling quests that require them to harness their unique talents.\\nTogether, they strive to unlock the secrets of technology and the human spirit, all while tackling moral dilemmas and philosophical questions.",
           "rating": 5,
           "reviews": [],
           "pages": 336,
           "collections": [
-            "Classic"
+            "Popular"
           ],
           "quantity": 1
         }

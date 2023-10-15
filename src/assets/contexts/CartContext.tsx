@@ -5,6 +5,7 @@ import { toast } from 'react-toastify'
 import { AuthContext } from "./AuthContext/AuthContext";
 import { useMutation, useQuery } from "react-query";
 import { editUser, getUsers } from "../../handleUsers/handleUsers";
+import { mergeCarts } from "../../utils/mergeCarts";
 
 export type CartContextType = {
     cart: CartItemInterface[],
@@ -63,7 +64,7 @@ export const CartContextProvider = ({ children }: CartContextProviderProps) => {
             const updateCart = async()=>{
                 const users = await getUsers()
                 const currentUser = users.find(serverUser => serverUser.id === user.id)
-                setCart(currentUser.cart)
+                setCart(prevCart => mergeCarts(prevCart, currentUser.cart))
             }
            updateCart()
         }
