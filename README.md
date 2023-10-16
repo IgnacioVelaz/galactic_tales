@@ -68,7 +68,7 @@ To access the books and user data, you'll need to start the JSON server in addit
    pnpm start
    ```
 
-   This command will launch the application locally, typically at `http://localhost:3000`. You can access it using your web browser.
+   This command will launch the application locally, typically at `http://localhost:5173`. You can access it using cntrl + click over the URL from the terminal, or by accessing the URL directly on your browser
 
 2. Start the JSON server to access the books and users data:
 
